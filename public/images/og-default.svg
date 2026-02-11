@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082f49"/>
+      <stop offset="1" stop-color="#155e75"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="970" cy="120" r="180" fill="#22d3ee" fill-opacity="0.22"/>
+  <circle cx="260" cy="560" r="220" fill="#86efac" fill-opacity="0.18"/>
+  <text x="90" y="280" fill="white" font-family="Verdana, sans-serif" font-size="72" font-weight="700">
+    Fat Freeze Liverpool
+  </text>
+  <text x="90" y="350" fill="#bae6fd" font-family="Verdana, sans-serif" font-size="34" font-weight="500">
+    Consultation-led body contouring in Liverpool
+  </text>
+</svg>

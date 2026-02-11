@@ -1,65 +1,138 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { PageSchema } from "@/components/seo/page-schema";
+import { BreadcrumbNav } from "@/components/shared/breadcrumb-nav";
+import { FaqBlock } from "@/components/shared/faq-block";
+import { AreasGrid } from "@/components/premium/areas-grid";
+import { BenefitsStrip } from "@/components/premium/benefits-strip";
+import { ConcernsGrid } from "@/components/premium/concerns-grid";
+import { ConsultationBanner } from "@/components/premium/consultation-banner";
+import { ConversionHero } from "@/components/premium/conversion-hero";
+import { FinalConversionBlock } from "@/components/premium/final-conversion-block";
+import { MapContactStrip } from "@/components/premium/map-contact-strip";
+import { ProcessTimeline } from "@/components/premium/process-timeline";
+import { QuickExplainer } from "@/components/premium/quick-explainer";
+import { TestimonialsSection } from "@/components/premium/testimonials-section";
+import { TrustSection } from "@/components/premium/trust-section";
+import { areaPages } from "@/lib/content/areas";
+import { getCorePage } from "@/lib/content/core-pages";
+import { concernPages } from "@/lib/content/concerns";
+import { buildMetadata } from "@/lib/seo";
 
-export default function Home() {
+const homePageContent = getCorePage("/");
+
+if (!homePageContent) {
+  throw new Error("Home page content missing");
+}
+
+export const metadata: Metadata = buildMetadata({
+  path: "/",
+  title: "Fat Freezing Liverpool | Cryolipolysis Clinic",
+  description:
+    "Consultation-led cryolipolysis in Liverpool with clear pricing, realistic expectations, and an easy route to booking.",
+  keywords: [
+    "fat freeze liverpool",
+    "fat freezing liverpool",
+    "cryolipolysis liverpool",
+    "book fat freezing consultation liverpool",
+  ],
+});
+
+export default function HomePage() {
+  const crumbs = [{ name: "Home", path: "/" }];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 lg:px-8">
+      <PageSchema
+        crumbs={crumbs}
+        faqs={homePageContent.faqs}
+        webPage={{
+          path: "/",
+          name: "Fat Freeze Liverpool Home",
+          type: "MedicalWebPage",
+          description:
+            "Homepage for Fat Freeze Liverpool with consultation-led cryolipolysis pathways, key area guidance, trust information, and booking CTAs.",
+        }}
+      />
+      <BreadcrumbNav crumbs={crumbs} />
+
+      <div className="grid gap-8">
+        <ConversionHero
+          eyebrow="Premium Liverpool Clinic"
+          title="Modern, consultation-led fat freezing in Liverpool"
+          intro="We explain your options in plain English, show clear pricing, and make booking simple."
+          primaryLabel="Book"
+          primaryHref="/book/"
+          secondaryLabel="Treatment overview"
+          secondaryHref="/fat-freezing-liverpool/"
+          trustItems={[
+            { label: "Consultation hours", value: "10:00-20:00" },
+            { label: "Clinical standard review", value: "6-Month Cycle" },
+            { label: "Service focus", value: "Non-Invasive" },
+          ]}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+        <TrustSection />
+
+        <QuickExplainer />
+
+        <BenefitsStrip
+          items={[
+            {
+              title: "Clear first step",
+              detail:
+                "Start with your area or concern, then move to pricing and booking when you are ready.",
+            },
+            {
+              title: "Consultation-led decisions",
+              detail:
+                "We base every recommendation on suitability, realistic milestones, and clinically safe communication.",
+            },
+            {
+              title: "Transparent expectations",
+              detail:
+                "No hype and no guesswork: clear boundaries, clear timeline, and clear next steps.",
+            },
+          ]}
+        />
+
+        <AreasGrid areas={areaPages} />
+
+        <ConcernsGrid concerns={concernPages} />
+
+        <ProcessTimeline
+          steps={[
+            {
+              title: "Book consultation",
+              detail: "Share your details and preferred appointment slot through our 3-step booking flow.",
+            },
+            {
+              title: "Suitability review",
+              detail: "We confirm whether fat freezing is appropriate for your area and goals.",
+            },
+            {
+              title: "Treatment planning",
+              detail: "We create a staged treatment plan with realistic expectations and review milestones.",
+            },
+            {
+              title: "Progress tracking",
+              detail: "Follow-up checkpoints help us evaluate progress and decide the next step safely.",
+            },
+          ]}
+        />
+
+        <ConsultationBanner
+          title="Book your consultation in one click"
+          description="Choose your slot online and receive confirmation by email. Same-day treatment may be available subject to suitability and schedule."
+        />
+
+        <TestimonialsSection />
+
+        <MapContactStrip />
+
+        {homePageContent.faqs?.length ? <FaqBlock faqs={homePageContent.faqs} /> : null}
+
+        <FinalConversionBlock />
+      </div>
+    </main>
   );
 }

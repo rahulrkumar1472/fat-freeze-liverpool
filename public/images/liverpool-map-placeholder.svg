@@ -1,0 +1,14 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="520" fill="#DBEAFE"/>
+  <rect x="32" y="32" width="736" height="456" rx="24" fill="#F8FAFC"/>
+  <path d="M80 120L720 120" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M80 220L720 220" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M80 320L720 320" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M160 60L160 460" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M300 60L300 460" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M460 60L460 460" stroke="#BFDBFE" stroke-width="8"/>
+  <path d="M620 60L620 460" stroke="#BFDBFE" stroke-width="8"/>
+  <circle cx="430" cy="255" r="30" fill="#0E7490"/>
+  <circle cx="430" cy="255" r="14" fill="#CFFAFE"/>
+  <text x="455" y="262" fill="#0F172A" font-size="18" font-family="Inter, sans-serif" font-weight="600">Fat Freeze Liverpool</text>
+</svg>
