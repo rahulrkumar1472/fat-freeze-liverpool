@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageSchema } from "@/components/seo/page-schema";
@@ -79,6 +80,17 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         title={article.title}
         intro={article.metaDescription}
       />
+
+      <div className="mt-6 overflow-hidden rounded-3xl border border-[var(--border)]">
+        <Image
+          src="/images/clinic-hero.png"
+          alt={`${article.title} article hero image`}
+          width={1280}
+          height={460}
+          className="h-auto w-full object-cover"
+          loading="lazy"
+        />
+      </div>
 
       <section className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--primary-soft)] p-6">
         <h2 className="font-display text-2xl font-semibold text-[var(--accent-navy)]">Helpful next steps</h2>

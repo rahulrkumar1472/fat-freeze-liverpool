@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ContentPage } from "@/components/shared/content-page";
 import { PageSchema } from "@/components/seo/page-schema";
@@ -85,6 +86,16 @@ export default function PricingPage() {
             <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
               Fat freezing package prices
             </h2>
+            <div className="mt-5 overflow-hidden rounded-2xl border border-[var(--border)]">
+              <Image
+                src="/images/clinic-hero.png"
+                alt="Consultation and treatment planning in our clinic"
+                width={1280}
+                height={420}
+                className="h-auto w-full object-cover"
+                loading="lazy"
+              />
+            </div>
 
             <div className="mt-6 grid gap-4 lg:grid-cols-2">
               {packages.map((pkg) => (

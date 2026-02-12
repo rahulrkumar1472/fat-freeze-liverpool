@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,18 +36,51 @@ export function TrustSection() {
 
         <Card className="surface-soft p-5 shadow-none">
           <CardContent className="p-0">
-          <p className="text-sm font-semibold text-[var(--accent-navy)]">Clinic details</p>
-          <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{siteConfig.address}</p>
-          <p className="mt-1 text-sm text-[var(--text-muted)]">Phone: {siteConfig.phone}</p>
-          <p className="mt-1 text-sm text-[var(--text-muted)]">Email: {siteConfig.enquiryEmail}</p>
+            <p className="text-sm font-semibold text-[var(--accent-navy)]">Clinic details</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{siteConfig.address}</p>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">Phone: {siteConfig.phone}</p>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">Email: {siteConfig.enquiryEmail}</p>
 
-          <ul className="mt-4 grid gap-2 text-sm text-[var(--text-muted)]">
-            {trustPoints.map((point) => (
-              <li key={point} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2">
-                {point}
-              </li>
-            ))}
-          </ul>
+            <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                <Image
+                  src="/images/clinic-hero.png"
+                  alt="Treatment room at our clinic"
+                  width={320}
+                  height={220}
+                  className="h-[84px] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                <Image
+                  src="/images/before-after-placeholder.svg"
+                  alt="Clinician consultation placeholder"
+                  width={320}
+                  height={220}
+                  className="h-[84px] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                <Image
+                  src="/images/liverpool-map-placeholder.svg"
+                  alt="Clinic location and access placeholder"
+                  width={320}
+                  height={220}
+                  className="h-[84px] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <ul className="mt-4 grid gap-2 text-sm text-[var(--text-muted)]">
+              {trustPoints.map((point) => (
+                <li key={point} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2">
+                  {point}
+                </li>
+              ))}
+            </ul>
           </CardContent>
         </Card>
       </div>

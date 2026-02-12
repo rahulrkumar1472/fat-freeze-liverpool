@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -83,17 +84,29 @@ export default function AreasWeTreatPage() {
           <Card className="section-shell p-6">
             <Badge variant="teal">Areas at a glance</Badge>
             <h2 className="mt-2 font-display text-2xl font-semibold text-[var(--accent-navy)]">Choose your target area</h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {areaPages.map((area) => (
-                <Button
-                  key={area.slug}
-                  asChild
-                  variant="secondary"
-                  className="h-auto justify-start rounded-2xl border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-left text-sm font-semibold text-[var(--text)]"
-                >
-                  <Link href={area.path}>{area.heroTitle}</Link>
-                </Button>
-              ))}
+            <div className="mt-5 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid gap-3 sm:grid-cols-2">
+                {areaPages.map((area) => (
+                  <Button
+                    key={area.slug}
+                    asChild
+                    variant="secondary"
+                    className="h-auto justify-start rounded-2xl border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-left text-sm font-semibold text-[var(--text)]"
+                  >
+                    <Link href={area.path}>{area.heroTitle}</Link>
+                  </Button>
+                ))}
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)]">
+                <Image
+                  src="/images/before-after-placeholder.svg"
+                  alt="Body areas illustration placeholder"
+                  width={720}
+                  height={520}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </Card>
         }
