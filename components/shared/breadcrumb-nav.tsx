@@ -16,7 +16,7 @@ export function BreadcrumbNav({ crumbs }: { crumbs: Breadcrumb[] }) {
                   {crumb.name}
                 </Link>
               )}
-              {!isLast ? <span className="text-slate-400">/</span> : null}
+              {!isLast ? <span className="text-[var(--muted-foreground)]">/</span> : null}
             </li>
           );
         })}

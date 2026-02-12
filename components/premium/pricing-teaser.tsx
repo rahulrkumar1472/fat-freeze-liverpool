@@ -21,7 +21,7 @@ export function PricingTeaser() {
             Clear package pricing before you book
           </h2>
           <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">
-            We charge per applicator and confirm final treatment scope during consultation.
+            We price by applicator and confirm final treatment scope during consultation.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -46,4 +46,3 @@ export function PricingTeaser() {
     </Card>
   );
 }
-

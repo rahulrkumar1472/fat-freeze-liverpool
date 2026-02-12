@@ -14,8 +14,8 @@ export type StaticPageContent = {
 
 const safetyCopy = getMandatorySafetyCopy();
 
-const homeFaqs = buildFaqSet("fat freezing consultation", "Liverpool");
-const serviceFaqs = buildFaqSet("fat freezing treatment planning", "Liverpool");
+const homeFaqs = buildFaqSet("homepage", "Liverpool");
+const serviceFaqs = buildFaqSet("service overview", "Liverpool");
 const howFaqs = buildFaqSet("how fat freezing works", "Liverpool");
 const resultsFaqs = buildFaqSet("fat freezing results timeline", "Liverpool");
 const pricingFaqs = buildFaqSet("fat freezing pricing", "Liverpool");
@@ -29,37 +29,37 @@ export const corePages: Record<string, StaticPageContent> = {
     title: "Fat Freezing Liverpool",
     metaTitle: "Fat Freezing Liverpool | Cryolipolysis Clinic",
     metaDescription:
-      "Premium Liverpool clinic for consultation-led fat freezing. Learn how it works, view prices, and book your appointment online.",
+      "Consultation-led cryolipolysis in Liverpool with clear pricing, practical guidance, and straightforward booking.",
     heroTitle: "Fat Freezing Liverpool",
     heroIntro:
-      "Consultation-led cryolipolysis in Liverpool with clear planning, premium care, and a straightforward route to booking.",
+      "Our clinic gives you clear guidance, honest expectations, and a simple route from first question to booked consultation.",
     sections: [
       {
-        heading: "A clear start for first-time clients",
+        heading: "A practical starting point for first-time clients",
         paragraphs: [
-          "If you are new to fat freezing, start with a consultation and a focused plan. We explain what is realistic for your target area and what your timeline might look like.",
-          "You do not need to guess your next step. Use the service page for treatment detail, pricing for package options, and the booking page to secure your preferred appointment.",
+          "If this is your first time exploring fat freezing, begin with consultation and a clear plan. We explain what is realistic for your area and how treatment may be staged.",
+          "You can move through the site in a simple order: treatment overview, pricing, then booking. Each step is written in plain English so decisions feel easier.",
         ],
       },
       {
-        heading: "Who usually books with us",
+        heading: "Who usually comes to our clinic",
         paragraphs: [
-          "Most clients have already made progress with training and nutrition but still feel one or two areas are out of proportion.",
-          "Our role is to assess whether non-invasive treatment is suitable and to guide you with practical, medically responsible recommendations.",
+          "Most clients are already active and health-focused, but still notice one or two stubborn areas that do not shift in line with their effort.",
+          "Our role is to assess whether non-invasive treatment is suitable and to give practical, medically responsible recommendations.",
         ],
       },
       {
         heading: "How your journey is structured",
         paragraphs: [
-          "Step one is consultation. Step two is a tailored treatment plan. Step three is review and progress tracking so next decisions are based on evidence, not guesswork.",
+          "Consultation comes first, followed by area planning and staged review checkpoints. This keeps decisions evidence-led rather than guesswork-led.",
           safetyCopy,
         ],
       },
       {
-        heading: "Fast pathways to the information you need",
+        heading: "Fast routes to the right page",
         paragraphs: [
-          "Use Areas We Treat if you already know your priority zone. Use How It Works if you want the science in plain English. Use Results if your main question is timing.",
-          "When you are ready, go straight to Book and choose a date and time that suits you.",
+          "If you already know your concern area, start with Areas We Treat. If you want the treatment process in plain language, open How It Works. If timing is your biggest question, open Results.",
+          "When you are ready to move forward, go directly to Book and choose your preferred date and time.",
         ],
       },
     ],
@@ -70,64 +70,64 @@ export const corePages: Record<string, StaticPageContent> = {
     title: "Fat Freezing Liverpool",
     metaTitle: "Fat Freezing in Liverpool | Consultation-Led Care",
     metaDescription:
-      "Everything you need to know about fat freezing in Liverpool, including suitability, treatment areas, timeline, pricing, and booking.",
+      "A clear overview of fat freezing in Liverpool covering suitability, process, expected timeline, pricing context, and booking.",
     heroTitle: "Fat Freezing Liverpool",
     heroIntro:
-      "A complete guide to treatment, suitability, results, and consultation booking at Fat Freezing Liverpool.",
+      "Everything you need to make a confident decision, from suitability and treatment process to pricing context and booking.",
     sections: [
       {
-        heading: "What fat freezing is",
+        heading: "What fat freezing means in clinic terms",
         paragraphs: [
-          "Cryolipolysis and fat freezing describe the same non-invasive approach. It is designed for localised contour goals, not for broad weight reduction.",
-          "Treatment starts with consultation so your practitioner can assess your area, goals, and timeline before any session is confirmed.",
+          "Cryolipolysis and fat freezing refer to the same non-invasive treatment pathway. It is designed for local contour goals, not broad weight reduction.",
+          "Treatment decisions are consultation-led, so your area profile and expectations are reviewed before any session is confirmed.",
         ],
       },
       {
-        heading: "Who this treatment is suitable for",
+        heading: "Who this pathway is usually suitable for",
         paragraphs: [
-          "Suitable clients are usually close to their preferred shape but want help with areas that remain stubborn.",
-          "Suitability depends on your medical history, area profile, and expectations. If treatment is not right for you, we will explain why clearly.",
+          "Suitable clients are often close to their preferred shape but want support with specific areas that remain resistant.",
+          "Suitability depends on medical context, tissue profile, and realistic expectations. If treatment is not suitable, we explain the reasons clearly.",
         ],
       },
       {
-        heading: "Areas commonly treated",
+        heading: "Areas commonly discussed",
         paragraphs: [
-          "Common focus areas include abdomen, flanks, lower stomach, thighs, upper arms, and double chin.",
-          "Area planning is done in stages where needed, so each decision is measured and easy to review.",
+          "Common focus zones include abdomen, flanks, lower stomach, thighs, upper arms, bra-back area, and under-chin profile.",
+          "When multiple areas matter, we stage planning so progress remains measurable and practical.",
         ],
       },
       {
-        heading: "What treatment day looks like",
+        heading: "What happens on treatment day",
         paragraphs: [
-          "Your practitioner confirms your plan, prepares the area, runs the session, and gives aftercare guidance before you leave.",
-          "You also get a clear follow-up timeline so you know when to review progress and what to expect in the first weeks.",
+          "Your practitioner confirms the plan, prepares the area, runs the treatment, and explains aftercare before you leave.",
+          "You receive clear review timings, so you know when progress should be checked and what to expect in early weeks.",
         ],
       },
       {
-        heading: "Results and timeline",
+        heading: "Results and timeline expectations",
         paragraphs: [
-          "Changes are usually gradual. Most clients track progress over several weeks rather than expecting immediate final results.",
-          "Review appointments help decide whether further sessions are needed.",
+          "Visible change is usually gradual. Most people track progress over weeks rather than expecting immediate final outcomes.",
+          "Review appointments help confirm whether your plan is complete or whether further staging may be useful.",
         ],
       },
       {
-        heading: "Safety and realistic expectations",
+        heading: "Safety and communication boundaries",
         paragraphs: [
-          "We use medically responsible wording and conservative claims. Where relevant, we use the term FDA-cleared.",
+          "Our clinic uses conservative, medically responsible language. Where relevant, we use FDA-cleared wording accurately.",
           safetyCopy,
         ],
       },
       {
-        heading: "Optional combination planning",
+        heading: "Optional supportive modalities",
         paragraphs: [
-          "Some clients discuss adding ultrasound cavitation or radio frequency. These are considered only when they support a clear treatment objective.",
-          "Your primary plan remains fat freezing, with optional extras introduced only if they add genuine value.",
+          "Some clients ask about adding ultrasound cavitation or radio frequency. These options are discussed only where they support a clear primary plan.",
+          "Fat freezing remains the core pathway, with secondary options considered only when they offer practical value.",
         ],
       },
       {
-        heading: "How to get started",
+        heading: "Booking your next step",
         paragraphs: [
-          "Book your consultation online, choose your preferred date and time, and share your main concern area.",
+          "Use the booking page to choose a date and time and share your main area of concern.",
           "Same-day treatment may be available subject to clinical suitability and schedule.",
         ],
       },
@@ -137,45 +137,45 @@ export const corePages: Record<string, StaticPageContent> = {
   "/fat-freezing/how-it-works/": {
     path: "/fat-freezing/how-it-works/",
     title: "How Fat Freezing Works",
-    metaTitle: "How Fat Freezing Works | Fat Freezing Liverpool",
+    metaTitle: "How Fat Freezing Works | Liverpool Clinic",
     metaDescription:
-      "Plain-English guide to how cryolipolysis works, what you may feel, how follow-up works, and what to expect after treatment.",
+      "A plain-English explanation of cryolipolysis, expected sensations, aftercare, review milestones, and treatment boundaries.",
     heroTitle: "How Fat Freezing Works",
     heroIntro:
-      "A step-by-step explanation of treatment, recovery, and review in clear, practical language.",
+      "A straightforward walkthrough of treatment, aftercare, and follow-up so you know what to expect at each stage.",
     sections: [
       {
-        heading: "The treatment in plain English",
+        heading: "The process in plain language",
         paragraphs: [
-          "Fat freezing uses controlled cooling on a selected area. The process is non-surgical and designed for localised contour goals.",
-          "Your practitioner chooses settings and placement based on your consultation outcome.",
+          "Fat freezing uses controlled cooling in selected areas to support local contour goals. It is non-surgical and consultation-led.",
+          "Your practitioner selects treatment setup according to your assessment and agreed priorities.",
         ],
       },
       {
-        heading: "What you may feel during treatment",
+        heading: "What people usually feel during treatment",
         paragraphs: [
-          "Most clients describe pressure and cooling sensations at the start. Experiences vary by area and by person.",
-          "Your team explains expected sensations before treatment so there are no surprises.",
+          "Most clients describe cooling and pressure at the beginning, with sensation settling as treatment continues.",
+          "Expected sensations are discussed before treatment so you know what is normal and what to report.",
         ],
       },
       {
-        heading: "Aftercare and day-to-day activity",
+        heading: "Aftercare and day-to-day routine",
         paragraphs: [
-          "Most clients return to usual routines quickly. You receive tailored aftercare guidance before leaving the clinic.",
-          "If anything feels unusual, we tell you exactly how and when to contact us.",
+          "Most clients return to normal activities quickly. You receive tailored aftercare guidance before leaving the clinic.",
+          "If anything causes concern, your aftercare plan explains exactly how to contact our team.",
         ],
       },
       {
-        heading: "Why follow-up matters",
+        heading: "Why follow-up is part of treatment quality",
         paragraphs: [
-          "Progress is checked over time, not judged in the first few days.",
-          "Follow-up helps decide whether your current plan is complete or whether additional sessions may be useful.",
+          "Progress is reviewed over planned checkpoints, not judged in the first few days.",
+          "Follow-up helps confirm whether your plan is complete or whether additional staging should be discussed.",
         ],
       },
       {
-        heading: "Treatment boundaries",
+        heading: "Clear treatment boundaries",
         paragraphs: [
-          "We do not use exaggerated promises. We explain likely outcomes based on your own profile.",
+          "We avoid inflated claims and explain likely outcomes against your own profile.",
           safetyCopy,
         ],
       },
@@ -187,41 +187,41 @@ export const corePages: Record<string, StaticPageContent> = {
     title: "Fat Freezing Results Timeline",
     metaTitle: "Fat Freezing Results Timeline | Liverpool Clinic",
     metaDescription:
-      "Learn what a typical fat freezing timeline can look like, when to review progress, and how to set realistic expectations.",
+      "Understand realistic treatment timelines, progress checkpoints, and key factors that influence visible change.",
     heroTitle: "Results & Timeline",
     heroIntro:
-      "A realistic view of when changes may appear and how your progress is reviewed.",
+      "A practical timeline view showing how progress is reviewed and when next steps are usually discussed.",
     sections: [
       {
-        heading: "When changes usually appear",
+        heading: "When visible changes are usually noticed",
         paragraphs: [
-          "Visible change is typically gradual. Early weeks are often about subtle shifts rather than dramatic change.",
-          "Your plan should include review points so progress is measured consistently.",
+          "Most people see progress gradually rather than all at once. Early changes are often subtle and build over time.",
+          "Planned review points are the best way to judge progress accurately.",
         ],
       },
       {
         heading: "How to track progress properly",
         paragraphs: [
-          "Use staged check-ins rather than daily self-judgement. Consistent photos and fit changes can be more useful than short-term assumptions.",
-          "Your practitioner can help you interpret progress in context of your original goals.",
+          "Use consistent checkpoints, photos, and clothing fit markers rather than day-to-day self-judgement.",
+          "Our team can help interpret progress against your starting baseline and goals.",
         ],
       },
       {
-        heading: "Why results vary",
+        heading: "Why timelines differ between people",
         paragraphs: [
-          "Response can differ by person and by treatment area. This is normal and expected in non-invasive contour work.",
-          "Clear expectations at consultation help reduce frustration and improve decision confidence.",
+          "Response can vary by area and by individual. This is normal within non-invasive contour treatment.",
+          "Clear expectation setting at consultation helps keep milestones realistic.",
         ],
       },
       {
-        heading: "When to discuss next steps",
+        heading: "When to review the next stage",
         paragraphs: [
-          "At follow-up, your practitioner reviews progress and confirms whether your current plan is complete or needs adjustment.",
-          "Any additional sessions are based on review findings, not guesswork.",
+          "At follow-up, we review your checkpoints and decide whether to continue, complete, or adjust the plan.",
+          "Any additional sessions are based on review findings, not assumptions.",
         ],
       },
       {
-        heading: "Safety reminder",
+        heading: "Important reminder",
         paragraphs: [safetyCopy],
       },
     ],
@@ -232,29 +232,29 @@ export const corePages: Record<string, StaticPageContent> = {
     title: "Pricing",
     metaTitle: "Fat Freezing Prices Liverpool | Our Clinic",
     metaDescription:
-      "See our fat freezing package prices in Liverpool, what is included, and how to estimate applicators before booking.",
+      "View clear package pricing, applicator guidance, and complimentary inclusions before booking consultation.",
     heroTitle: "Pricing",
     heroIntro:
-      "Simple package pricing with clear inclusions, no confusing wording, and direct booking links.",
+      "Straightforward package pricing with transparent inclusions and direct booking links.",
     sections: [
       {
-        heading: "How pricing works",
+        heading: "How our pricing is structured",
         paragraphs: [
-          "Pricing is based on applicator count, with package options to suit different treatment plans.",
-          "One applicator covers approximately a 20 cm area. A simple palm-of-hand estimate can help you prepare for consultation.",
+          "Prices are based on applicator count, with package options for different area plans.",
+          "One applicator usually covers around a 20 cm zone. A palm-of-hand estimate can help you prepare for consultation.",
         ],
       },
       {
-        heading: "What is included",
+        heading: "What is included in package planning",
         paragraphs: [
-          "Some packages include complimentary treatments. Your practitioner explains what is clinically suitable for your goals.",
-          "All plans are confirmed after consultation so recommendations remain safe and realistic.",
+          "Selected packages include complimentary treatments. Your practitioner confirms what is appropriate for your goals.",
+          "Final recommendations are made after consultation so planning remains safe and realistic.",
         ],
       },
       {
-        heading: "Before you book",
+        heading: "Before you choose a package",
         paragraphs: [
-          "If you are unsure how many applicators may be relevant, book a consultation and we will map a practical staged plan.",
+          "If you are unsure how many applicators are likely, consultation provides clear staged planning and budget context.",
           safetyCopy,
         ],
       },
@@ -266,29 +266,29 @@ export const corePages: Record<string, StaticPageContent> = {
     title: "Book Consultation",
     metaTitle: "Book Fat Freezing Consultation | Liverpool",
     metaDescription:
-      "Book your fat freezing consultation online. Choose your date, time, and area of concern and receive confirmation by email.",
+      "Book your consultation online in three steps. Choose your date, time, and concern area, then receive confirmation by email.",
     heroTitle: "Book Your Consultation",
     heroIntro:
-      "Choose a date and time, share your treatment goals, and receive confirmation from our clinic team.",
+      "Pick a suitable slot, share your goals, and receive confirmation from our clinic team.",
     sections: [
       {
         heading: "How booking works",
         paragraphs: [
-          "Our three-step booking form collects your details, area of concern, and preferred appointment slot.",
-          "After submission, you receive a confirmation email and the clinic receives your request for follow-up.",
+          "Our three-step form collects your details, concern area, and preferred appointment time.",
+          "After submission, you receive confirmation by email and our team receives your booking request.",
         ],
       },
       {
-        heading: "Appointment hours",
+        heading: "Appointment hours and availability",
         paragraphs: [
-          "Available times are from 10:00 to 20:00, Monday to Sunday.",
+          "Appointments are available from 10:00 to 20:00, Monday to Sunday.",
           "Same-day treatment may be available subject to clinical suitability and schedule.",
         ],
       },
       {
         heading: "Before your consultation",
         paragraphs: [
-          "Bring your main concern area and timeline expectations so your practitioner can guide you quickly.",
+          "Bring your key concern and preferred timeline so your practitioner can guide you efficiently.",
           safetyCopy,
         ],
       },
@@ -298,31 +298,31 @@ export const corePages: Record<string, StaticPageContent> = {
   "/about/": {
     path: "/about/",
     title: "About Fat Freezing Liverpool",
-    metaTitle: "About Fat Freezing Liverpool | Clinic Standards",
+    metaTitle: "About Our Liverpool Clinic | Standards & Care",
     metaDescription:
-      "Meet Fat Freezing Liverpool and learn about practitioner standards, consultation approach, and six-month protocol reviews.",
-    heroTitle: "About Fat Freezing Liverpool",
+      "Meet our clinic approach, practitioner standards, consultation model, and six-month protocol review cycle.",
+    heroTitle: "About Our Clinic",
     heroIntro:
-      "A Liverpool clinic focused on clear communication, safe planning, and premium client care.",
+      "We focus on clear communication, safe planning, and a premium consultation experience.",
     sections: [
       {
-        heading: "Our approach",
+        heading: "Our clinic approach",
         paragraphs: [
-          "We are consultation-led and outcomes-focused. Every recommendation starts with suitability, realistic expectations, and a practical plan.",
-          "Clients choose us for clear communication and straightforward guidance without pressure.",
+          "Every recommendation starts with suitability, realistic goals, and practical planning.",
+          "Clients choose our team for clear guidance, honest timelines, and a no-pressure consultation style.",
         ],
       },
       {
-        heading: "Practitioner standards",
+        heading: "Practitioner standards and governance",
         paragraphs: [
-          "Treatments are delivered by qualified practitioners following internal protocols.",
-          "Our in-house standards are reviewed every six months to keep service quality consistent.",
+          "Treatments are delivered by qualified practitioners working within clinic protocols.",
+          "Our in-house standards and communication framework are reviewed every six months.",
         ],
       },
       {
-        heading: "How we communicate",
+        heading: "How we communicate with clients",
         paragraphs: [
-          "We use plain language and medically responsible wording. We use FDA-cleared where relevant.",
+          "We use plain English and medically responsible wording. Where relevant, we use FDA-cleared language correctly.",
           safetyCopy,
         ],
       },
@@ -332,12 +332,12 @@ export const corePages: Record<string, StaticPageContent> = {
   "/contact/": {
     path: "/contact/",
     title: "Contact",
-    metaTitle: "Contact Fat Freezing Liverpool Clinic",
+    metaTitle: "Contact Our Liverpool Clinic",
     metaDescription:
-      "Contact Fat Freezing Liverpool at 67-83 Norfolk St, Liverpool L1 0BG. Call 0330 053 5015 or email contact@fatfreezeliverpool.co.uk.",
-    heroTitle: "Contact Fat Freezing Liverpool",
+      "Contact our Liverpool clinic at 67-83 Norfolk St, call 0330 053 5015, or email contact@fatfreezeliverpool.co.uk.",
+    heroTitle: "Contact Our Team",
     heroIntro:
-      "Talk to our team about treatment options, appointment availability, and consultation support.",
+      "Speak with us about treatment options, appointment availability, and consultation support.",
     sections: [
       {
         heading: "Clinic details",
@@ -349,14 +349,14 @@ export const corePages: Record<string, StaticPageContent> = {
       {
         heading: "What to include in your enquiry",
         paragraphs: [
-          "Share your preferred contact method, concern area, and ideal appointment times.",
-          "This helps the team respond quickly with useful next steps.",
+          "Share your concern area, preferred contact method, and ideal appointment times.",
+          "This helps our team respond quickly with useful and practical next steps.",
         ],
       },
       {
-        heading: "Important reminder",
+        heading: "Clinical reminder",
         paragraphs: [
-          "Enquiry responses are informational and do not replace personal medical advice.",
+          "Contact responses are informational and do not replace personalised medical advice.",
           safetyCopy,
         ],
       },
@@ -366,29 +366,29 @@ export const corePages: Record<string, StaticPageContent> = {
   "/faq/": {
     path: "/faq/",
     title: "FAQ",
-    metaTitle: "Fat Freezing FAQ | Fat Freezing Liverpool",
+    metaTitle: "Fat Freezing FAQ | Liverpool Clinic",
     metaDescription:
-      "Answers to common questions about fat freezing in Liverpool, including suitability, pricing, timeline, and booking.",
+      "Find clear answers about suitability, process, pricing, expected timeline, and how to book your consultation.",
     heroTitle: "Frequently Asked Questions",
     heroIntro:
-      "Quick answers to common treatment and booking questions.",
+      "Quick, practical answers to the questions clients ask most often.",
     sections: [
       {
-        heading: "How to use this page",
+        heading: "How to use this FAQ page",
         paragraphs: [
-          "Use these answers for general guidance, then book consultation for personalised advice.",
-          "If your question is area-specific, visit Areas We Treat for focused guidance.",
+          "Use these answers as a quick reference, then book consultation for advice tailored to your own goals.",
+          "For area-specific details, open the Areas We Treat section and compare the pages most relevant to you.",
         ],
       },
       {
-        heading: "Clear and medically responsible answers",
+        heading: "Clear and responsible answers",
         paragraphs: [
-          "Our FAQ responses are short, direct, and written to support confident decision-making.",
+          "Every answer is written to be direct, practical, and medically responsible.",
           safetyCopy,
         ],
       },
     ],
-    faqs: buildFaqSet("fat freezing questions", "Liverpool"),
+    faqs: buildFaqSet("faq page", "Liverpool"),
   },
 };
 

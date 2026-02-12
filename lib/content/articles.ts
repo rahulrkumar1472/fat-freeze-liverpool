@@ -636,79 +636,96 @@ export function buildArticleSections(article: Article): ContentSection[] {
   const isCombination = article.clusterId === "E";
   const isScience = article.clusterId === "C";
   const isLocal = article.clusterId === "D";
+  const isArea = article.clusterId === "A";
+  const isConcern = article.clusterId === "B";
   const safety = getMandatorySafetyCopy();
 
   return [
     {
-      heading: `${article.title}: what this guide covers`,
+      heading: `${article.title}: key points to know`,
       paragraphs: [
-        `${article.localAngle} This page is written to help you make a practical decision, not to overwhelm you with technical language.`,
-        `If this topic matches your concern, the most useful next step is a consultation where your area, timeline, and suitability can be reviewed properly.`,
+        `${article.localAngle} Our aim is to help you make a confident decision with clear, practical information.`,
+        "If this topic matches your concern, consultation is the best way to confirm suitability and map the next step.",
       ],
     },
     {
-      heading: "Who this is most relevant for",
+      heading: "Who this topic usually helps most",
       paragraphs: [
-        "This article is most useful for people who already have a specific area or concern in mind and want clear next steps before booking.",
-        "If you are still deciding between treatments, use this guide to prepare your questions so consultation time is focused and productive.",
+        isArea
+          ? "This page is useful if you already know the body area you want to prioritise and want realistic expectations before booking."
+          : isConcern
+            ? "This page is useful if you are starting with a concern and want to understand your treatment options clearly."
+            : isScience
+              ? "This page is useful if you want plain-English science and practical safety context before consultation."
+              : isLocal
+                ? "This page is useful if you are comparing local options and want to know what to look for in a clinic."
+                : "This page is useful if you are comparing treatment pathways and deciding how to sequence your plan.",
+        "Bring the points that matter most to you into consultation so your plan is specific, not generic.",
       ],
       bullets: [
-        "Clarify your priority area",
+        "Clarify your priority area or concern",
         "Set a realistic timeline",
         "Understand likely treatment stages",
-        "Know what to ask before booking",
+        "Prepare focused consultation questions",
       ],
     },
     {
       heading: isScience
-        ? "Science explained in plain English"
-        : "How treatment planning is usually approached",
+        ? "Science in plain English"
+        : "How planning is usually structured",
       paragraphs: [
         isScience
-          ? "Cryolipolysis uses controlled cooling in selected areas. It is non-surgical and designed for localised contour goals."
-          : "Good planning is area-specific. Your practitioner should explain what is possible, what may take longer, and what follow-up will look like.",
+          ? "Cryolipolysis uses controlled cooling in selected areas. It is non-surgical and intended for local contour planning."
+          : isCombination
+            ? "Combination planning works best when one clear primary pathway is established first and secondary options are added only when useful."
+            : "Strong planning is area-specific. Consultation should explain what is realistic, what may take longer, and how follow-up is handled.",
         safety,
       ],
     },
     {
       heading: "Timeline and expectations",
       paragraphs: [
-        "Changes are usually gradual. Most people see progress over weeks, not overnight.",
-        "Review appointments help keep decisions clear and show whether your plan should continue as-is or be adjusted.",
+        "Changes are usually gradual. Most clients review progress over weeks rather than expecting immediate final outcomes.",
+        "Planned review checkpoints keep decisions clear and show whether your plan should continue, pause, or adjust.",
       ],
     },
     {
       heading: isCombination
-        ? "When combination options are discussed"
-        : "How this topic connects to your full treatment plan",
+        ? "When combination options are worth discussing"
+        : "How this topic fits your wider treatment plan",
       paragraphs: [
         isCombination
-          ? "Combination plans can be useful in selected cases. They are considered only when they genuinely improve your outcome plan."
-          : "This topic is one part of a bigger journey that usually includes consultation, treatment planning, and staged follow-up.",
-        "If multiple options are on the table, sequencing matters. Your practitioner should explain which step comes first and why.",
+          ? "Combination options can help in selected cases, but only when sequencing and expected value are clearly explained."
+          : "This topic forms one part of a wider journey that usually includes assessment, treatment staging, and follow-up.",
+        "If more than one option is available, sequencing should be explained clearly so you know what comes first and why.",
       ],
     },
     {
       heading: isLocal
         ? "Liverpool practical factors to consider"
-        : "Questions worth asking before you commit",
+        : "Questions to ask before you commit",
       paragraphs: [
         isLocal
-          ? "Travel time, appointment availability, and communication style all matter. Choose a clinic that explains your plan clearly and consistently."
-          : "Ask what suitability checks are done, what timeline is realistic, and how progress is reviewed after treatment.",
-        "You should always leave consultation knowing your next step, not guessing what happens next.",
+          ? "Travel time, appointment availability, and communication style all matter. Choose a clinic that keeps advice clear and consistent."
+          : "Ask what suitability checks are included, what timeline is realistic, and how progress is measured at follow-up.",
+        `You can also review ${article.supportLinkLabel} for related context before booking.`,
       ],
     },
     {
-      heading: "Next step after reading",
+      heading: "Next step",
       paragraphs: [
-        "Review the service page for full treatment detail, check pricing, and then book your consultation.",
-        "Bring your key questions with you so your practitioner can build a plan that fits your goals and schedule.",
+        "Open the treatment overview for full pathway context, review pricing, and then book consultation.",
+        "Bring your main questions so our team can shape a plan that fits your goals and schedule.",
       ],
     },
   ];
 }
 
 export function buildArticleFaqs(article: Article): FaqItem[] {
-  return buildArticleFaqSet(article.title);
+  return buildArticleFaqSet({
+    title: article.title,
+    category: article.category,
+    focusTerm: article.focusTerm,
+    supportLabel: article.supportLinkLabel,
+  });
 }

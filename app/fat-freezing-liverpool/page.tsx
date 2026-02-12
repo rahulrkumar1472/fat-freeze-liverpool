@@ -66,8 +66,8 @@ export default function FatFreezingLiverpoolPage() {
         <section id="service-overview">
           <ConversionHero
             eyebrow="Treatment overview"
-            title="Fat freezing in Liverpool, explained clearly"
-            intro="If you are comparing options, this page gives you the full treatment overview, realistic expectations, and a direct route to booking."
+            title="Treatment explained clearly, with practical next steps"
+            intro="If you are comparing options, this page gives you a full overview, realistic expectations, and a direct route to booking."
             primaryLabel="Book Consultation"
             primaryHref="/book/"
             secondaryLabel="View pricing and planning"
@@ -91,7 +91,7 @@ export default function FatFreezingLiverpoolPage() {
                 <Badge variant="teal">Suitability first</Badge>
                 <h2 className="mt-2 text-lg font-semibold text-[var(--accent-navy)]">No treatment without consultation screening</h2>
                 <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
-                  We review goals, anatomy, and contraindications before any protocol recommendation.
+                  We review goals, anatomy, and contraindications before any recommendation is made.
                 </p>
               </CardContent>
             </Card>
@@ -100,7 +100,7 @@ export default function FatFreezingLiverpoolPage() {
                 <Badge variant="teal">Medically responsible copy</Badge>
                 <h2 className="mt-2 text-lg font-semibold text-[var(--accent-navy)]">FDA-cleared wording and realistic claims</h2>
                 <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
-                  This is not a weight-loss treatment. Results vary by individual. We keep messaging medically responsible.
+                  This is not a weight-loss treatment. Results vary by individual. Our wording stays clinically responsible.
                 </p>
               </CardContent>
             </Card>
@@ -109,14 +109,14 @@ export default function FatFreezingLiverpoolPage() {
                 <Badge variant="teal">Clear next steps</Badge>
                 <h2 className="mt-2 text-lg font-semibold text-[var(--accent-navy)]">One-click booking from every major section</h2>
                 <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
-                  We keep every section actionable so you can move from research to a consultation without friction.
+                  Each section points to a clear next action so you can move from research to consultation without friction.
                 </p>
               </CardContent>
             </Card>
           </section>
 
           <ConsultationBanner
-            title="Fastest path: book your fat freezing consultation in Liverpool"
+            title="Fastest path: book your consultation online"
             description="Choose your appointment slot and receive a confirmation email immediately after submission."
           />
 
@@ -146,7 +146,7 @@ export default function FatFreezingLiverpoolPage() {
               </div>
             </div>
             <p className="mt-3 text-sm leading-8 text-[var(--text-muted)]">
-              The sections below provide full detail in a cleaner format, so you can read at your pace and move to booking when ready.
+              The sections below provide full detail in a clear format, so you can read at your pace and move to booking when ready.
             </p>
             <div className="mt-6">
               <SectionRenderer sections={page.sections} withInlineCtas />

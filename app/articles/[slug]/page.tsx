@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
       <section className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--primary-soft)] p-6">
         <h2 className="font-display text-2xl font-semibold text-[var(--accent-navy)]">Helpful next steps</h2>
         <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">
-          Use this guide to understand the topic, then move through the key pages below for pricing, area detail, timeline expectations, and booking.
+          Review the topic here, then move through the key pages below for pricing, area detail, timeline expectations, and booking.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Button asChild variant="secondary" size="sm">

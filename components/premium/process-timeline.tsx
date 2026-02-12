@@ -15,7 +15,7 @@ export function ProcessTimeline({ steps }: { steps: Step[] }) {
         <div>
           <Badge variant="teal">How It Works</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
-            Consultation to results in clear stages
+            Consultation to review in clear stages
           </h2>
         </div>
         <Button asChild variant="secondary">

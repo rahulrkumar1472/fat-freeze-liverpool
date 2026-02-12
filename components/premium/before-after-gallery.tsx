@@ -16,23 +16,24 @@ export function BeforeAfterGallery() {
         Before-and-after style visual planning
       </h2>
       <p className="mt-3 text-sm leading-8 text-[var(--text-muted)]">
-        These visuals are placeholders to help explain area planning. They are not guarantees of outcome. Consultation is required and suitability is assessed individually.
+        These visuals are illustrative planning references. They are not guarantees of outcome. Consultation is required and suitability is assessed individually.
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         {labels.map((label) => (
           <Card key={label} className="rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-3 shadow-none">
             <CardContent className="p-0">
+            {/* TODO: Replace with compliant stock photo pair showing consultation-led body contouring planning for this area. */}
             <Image
-              src="/images/before-after-placeholder.svg"
-              alt={`${label} placeholder before and after layout`}
+              src="/images/before-after-illustration.svg"
+              alt={`${label} planning illustration`}
               width={420}
               height={320}
               className="h-auto w-full rounded-xl object-cover"
               loading="lazy"
             />
             <p className="mt-3 text-sm font-semibold text-[var(--accent-navy)]">{label}</p>
-            <p className="mt-1 text-xs text-[var(--text-muted)]">Illustrative placeholders for visual guidance only.</p>
+            <p className="mt-1 text-xs text-[var(--text-muted)]">Illustrative visuals for planning context only.</p>
             </CardContent>
           </Card>
         ))}

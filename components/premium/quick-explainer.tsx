@@ -8,7 +8,7 @@ export function QuickExplainer() {
     <Card className="section-shell p-6 sm:p-8">
       <Badge variant="teal">Quick explainer</Badge>
       <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
-        Cryolipolysis and fat freezing are the same consultation-led pathway
+        Cryolipolysis and fat freezing refer to the same treatment pathway
       </h2>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <p className="text-sm leading-8 text-[var(--text-muted)]">

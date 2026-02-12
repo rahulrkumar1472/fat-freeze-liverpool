@@ -298,11 +298,11 @@ export function Header() {
             Contact
           </Link>
 
-          <Button asChild size="lg" className="px-7">
+          <Button asChild size="lg" className="min-w-[8.25rem] px-6 text-base">
             <Link href={navigation.primaryCta.href}>{navigation.primaryCta.label}</Link>
           </Button>
 
-          <Button type="button" onClick={openChatbot} variant="secondary">
+          <Button type="button" onClick={openChatbot} variant="secondary" className="min-w-[9.5rem] px-5 text-sm">
             Speak to us now
           </Button>
         </nav>
@@ -374,7 +374,12 @@ export function Header() {
             >
               Book
             </Link>
-            <Button type="button" onClick={openChatbot} variant="secondary" className="rounded-xl px-3 py-3 text-sm">
+            <Button
+              type="button"
+              onClick={openChatbot}
+              variant="secondary"
+              className="rounded-xl px-4 py-3 text-sm"
+            >
               Speak to us now
             </Button>
           </div>

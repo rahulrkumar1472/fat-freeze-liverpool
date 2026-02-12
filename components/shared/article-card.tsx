@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 function getThumbnail(category: string) {
-  if (category === "Liverpool local intent") return "/images/liverpool-map-placeholder.svg";
+  if (category === "Liverpool local intent") return "/images/liverpool-map-illustration.svg";
   if (category === "How it works, science, and safety") return "/images/clinic-hero.png";
-  if (category === "Combination protocols and comparisons") return "/images/before-after-placeholder.svg";
+  if (category === "Combination protocols and comparisons") return "/images/before-after-illustration.svg";
   return "/images/clinic-hero.png";
 }
 
@@ -19,6 +19,7 @@ export function ArticleCard({ article }: { article: Article }) {
     <Card className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <CardContent className="p-0">
         <div className="overflow-hidden rounded-xl border border-[var(--border)]">
+          {/* TODO: Replace with topic-specific stock image (clinic consultation, treatment area close-up, or results planning visual). */}
           <Image
             src={thumbnail}
             alt={`${article.title} visual guide`}

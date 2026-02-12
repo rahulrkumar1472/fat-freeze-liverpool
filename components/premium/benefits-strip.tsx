@@ -15,7 +15,7 @@ export function BenefitsStrip({ items }: { items: BenefitItem[] }) {
         <div>
           <Badge variant="teal">Benefits</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
-            Why Liverpool clients choose consultation-led fat freezing
+            Why clients choose our consultation-led approach
           </h2>
         </div>
         <Button asChild>

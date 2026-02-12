@@ -62,8 +62,8 @@ export default function HomePage() {
       <Section className="pt-4">
         <ConversionHero
           eyebrow="Premium Liverpool Clinic"
-          title="Modern, consultation-led fat freezing in Liverpool"
-          intro="We explain your options in plain English, show clear pricing, and make booking simple."
+          title="Clear, consultation-led body contouring in Liverpool"
+          intro="We explain your options in plain English, set realistic expectations, and make booking straightforward."
           primaryLabel="Book"
           primaryHref="/book/"
           secondaryLabel="Treatment overview"
@@ -87,17 +87,17 @@ export default function HomePage() {
             {
               title: "Clear first step",
               detail:
-                "Start with your area or concern, then move to pricing and booking when you are ready.",
+                "Start with your concern or area, then move to pricing and booking when you are ready.",
             },
             {
               title: "Consultation-led decisions",
               detail:
-                "We base every recommendation on suitability, realistic milestones, and clinically safe communication.",
+                "Every recommendation is based on suitability, realistic milestones, and clinically safe communication.",
             },
             {
               title: "Transparent expectations",
               detail:
-                "No hype and no guesswork: clear boundaries, clear timeline, and clear next steps.",
+                "No hype and no guesswork: clear boundaries, practical timelines, and clear next steps.",
             },
           ]}
         />
@@ -113,19 +113,19 @@ export default function HomePage() {
           steps={[
             {
               title: "Book consultation",
-              detail: "Share your details and preferred appointment slot through our 3-step booking flow.",
+              detail: "Share your details and preferred slot through our simple 3-step booking flow.",
             },
             {
               title: "Suitability review",
-              detail: "We confirm whether fat freezing is appropriate for your area and goals.",
+              detail: "We confirm whether treatment is appropriate for your area and goals.",
             },
             {
               title: "Treatment planning",
-              detail: "We create a staged treatment plan with realistic expectations and review milestones.",
+              detail: "We build a staged plan with realistic expectations and review milestones.",
             },
             {
               title: "Progress tracking",
-              detail: "Follow-up checkpoints help us evaluate progress and decide the next step safely.",
+              detail: "Follow-up checkpoints help us review progress and decide the next step safely.",
             },
           ]}
         />
@@ -135,7 +135,7 @@ export default function HomePage() {
       </Section>
       <Section className="py-6">
         <ConsultationBanner
-          title="Book your consultation in one click"
+          title="Book your consultation in one step"
           description="Choose your slot online and receive confirmation by email. Same-day treatment may be available subject to suitability and schedule."
         />
       </Section>

@@ -14,8 +14,8 @@ const sections: ContentSection[] = [
   {
     heading: "Start with the concern you feel most",
     paragraphs: [
-      "Most people begin with a practical concern, not a treatment term. This hub helps you move from that concern to a clear treatment conversation.",
-      "Each page explains what to discuss in consultation, what timeline is realistic, and what your next step should be.",
+      "Most people begin with a practical concern, not a treatment term. This hub helps turn that concern into a clear treatment conversation.",
+      "Each page explains what to discuss in consultation, what timeline is realistic, and what to do next.",
     ],
   },
   {
@@ -44,9 +44,9 @@ const concernHubFaqs = buildSupportFaqs("stubborn fat concerns");
 
 export const metadata: Metadata = buildMetadata({
   path: "/concerns/",
-  title: "Stubborn Fat Concerns Liverpool",
+  title: "Stubborn Fat Concerns | Liverpool Clinic",
   description:
-    "Explore concern-led guides for stubborn belly, arm, thigh, and love handle fat in Liverpool with clear next steps.",
+    "Explore concern-led guidance for belly, arm, thigh, love handle, and under-chin fat with clear next steps.",
   keywords: ["stubborn fat treatment Liverpool", "fat freezing concerns Liverpool"],
 });
 
@@ -71,7 +71,7 @@ export default function ConcernsHubPage() {
       <ContentPage
         crumbs={crumbs}
         heroTitle="Concerns"
-        heroIntro="Concern-led Liverpool guides to help you choose a practical next step."
+        heroIntro="Concern-led guidance to help you choose a practical next step."
         sections={sections}
         faqs={concernHubFaqs}
         supportLink="/book/"

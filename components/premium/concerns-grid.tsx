@@ -11,11 +11,11 @@ export function ConcernsGrid({ concerns }: { concerns: ConcernPage[] }) {
         <div>
           <Badge variant="teal">Concerns</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
-            Start with your concern, then move to consultation
+            Start with your concern, then plan your next step
           </h2>
         </div>
         <Link href="/concerns/" className="text-sm font-semibold text-[var(--accent-navy)] underline">
-          Explore concerns hub
+          Explore all concerns
         </Link>
       </div>
 
@@ -30,7 +30,7 @@ export function ConcernsGrid({ concerns }: { concerns: ConcernPage[] }) {
             <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{concern.heroIntro}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button asChild variant="secondary" size="sm">
-                <Link href={concern.path}>Read concern guide</Link>
+                <Link href={concern.path}>View concern page</Link>
               </Button>
               <Button asChild variant="secondary" size="sm">
                 <Link href="/fat-freezing-liverpool/">Treatment overview</Link>

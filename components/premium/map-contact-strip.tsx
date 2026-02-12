@@ -29,9 +29,10 @@ export function MapContactStrip() {
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-[var(--border)]">
+          {/* TODO: Replace with a professional stock image showing the clinic exterior or a nearby Liverpool landmark with clean wayfinding context. */}
           <Image
-            src="/images/liverpool-map-placeholder.svg"
-            alt="Map placeholder for Liverpool clinic location"
+            src="/images/liverpool-map-illustration.svg"
+            alt="Liverpool clinic location map reference"
             width={800}
             height={520}
             className="h-auto w-full object-cover"

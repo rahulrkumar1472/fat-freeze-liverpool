@@ -6,17 +6,17 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     quote:
-      "The consultation felt structured and clear. I knew exactly what was realistic and when to review progress.",
+      "The consultation was clear and structured. I left knowing exactly what was realistic and when to review progress.",
     name: "Liverpool client",
   },
   {
     quote:
-      "I liked how practical the team was. No exaggerated claims, just a clear plan and timeline.",
+      "The team kept everything practical and honest. No hype, just a clear plan and timeline.",
     name: "City centre client",
   },
   {
     quote:
-      "The process was straightforward and easy to fit around work. Communication stayed strong throughout.",
+      "The process was straightforward and easy to fit around work, and communication stayed consistent throughout.",
     name: "Merseyside client",
   },
 ];

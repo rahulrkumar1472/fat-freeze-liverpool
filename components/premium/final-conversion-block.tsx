@@ -8,11 +8,11 @@ export function FinalConversionBlock() {
     <Card className="mt-14 rounded-[2rem] border-[var(--accent-navy)] bg-[var(--accent-navy)] text-[var(--text-inverse)] shadow-xl">
       <CardContent className="p-8 sm:p-10">
       <Badge className="border-white/20 bg-white/10 text-[#d7eef4]">Next step</Badge>
-      <h2 className="mt-2 font-display text-3xl font-semibold leading-tight sm:text-4xl">
-        Book your consultation with our Liverpool clinic
+      <h2 className="mt-2 font-display text-3xl font-semibold leading-tight text-[var(--text-inverse)] [text-shadow:0_2px_10px_rgba(0,0,0,0.22)] sm:text-4xl">
+        Book your consultation with our clinic team
       </h2>
       <p className="mt-4 max-w-3xl text-sm leading-8 text-[#e8f1f5]">
-        A focused consultation can save weeks of uncertainty. We confirm suitability, explain realistic milestones, and map your plan in clear steps.
+        A focused consultation removes uncertainty. We confirm suitability, explain realistic milestones, and map your plan in clear stages.
       </p>
       <div className="mt-7 flex flex-wrap gap-3">
         <Button asChild size="lg">

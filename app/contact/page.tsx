@@ -31,7 +31,7 @@ export default function ContactPage() {
         extraSchemas={[buildContactPageSchema()]}
         webPage={{
           path: "/contact/",
-          name: "Contact Fat Freezing Liverpool",
+          name: "Contact Our Team",
           type: "ContactPage",
           description: page.metaDescription,
         }}

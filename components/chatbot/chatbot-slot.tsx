@@ -4,14 +4,13 @@ import Link from "next/link";
 import Script from "next/script";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { chatbotConfig } from "@/lib/chatbot-config";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
 const mode = chatbotConfig.mode;
 const scriptSrc = chatbotConfig.scriptSrc;
 const inlineSnippet = chatbotConfig.inlineSnippet;
+const compactMode = chatbotConfig.compactMode;
 const storageKey = "ffl_chat_session_v2";
 
 type Intent =
@@ -103,7 +102,7 @@ function getIntentResponse(intent: Intent, userInput: string, history: Message[]
 
     return createMessage(
       "assistant",
-      `${pick(variants, seed)} If you want, you can book now and we will confirm your exact plan in consultation.`,
+      `${pick(variants, seed)} If you are ready, booking now lets our team confirm your exact plan during consultation.`,
       [
         { label: "View pricing", href: "/pricing/" },
         ...(areaLink ? [areaLink] : []),
@@ -127,7 +126,7 @@ function getIntentResponse(intent: Intent, userInput: string, history: Message[]
   if (intent === "results") {
     return createMessage(
       "assistant",
-      "Results are usually gradual and reviewed over time. We will explain a realistic timeline for your area during consultation and set practical checkpoints.",
+      "Results are usually gradual and reviewed over time. Our team explains a realistic timeline for your area during consultation and sets practical checkpoints.",
       [
         { label: "Results timeline", href: "/fat-freezing/results-timeline/" },
         { label: "How it works", href: "/fat-freezing/how-it-works/" },
@@ -188,7 +187,7 @@ function getIntentResponse(intent: Intent, userInput: string, history: Message[]
       "Perfect, booking is the fastest next step.",
       "Good choice. We can move straight to booking.",
     ];
-    return createMessage("assistant", `${pick(options, seed)} Choose a time that suits you and we will confirm by email.`, [
+    return createMessage("assistant", `${pick(options, seed)} Choose a time that suits you and confirmation will be sent by email.`, [
       { label: "Book consultation", href: "/book/" },
       { label: "View pricing", href: "/pricing/" },
     ]);
@@ -281,6 +280,12 @@ export function ChatbotSlot() {
     setInput("");
   }
 
+  const launcherClass = compactMode
+    ? "inline-flex h-10 items-center gap-2 px-4 text-sm shadow-[0_10px_24px_rgba(15,23,42,0.12)]"
+    : "inline-flex h-11 items-center gap-2 px-5 text-sm shadow-[0_12px_26px_rgba(15,23,42,0.14)]";
+  const panelClass =
+    "mb-3 w-[min(360px,calc(100vw-1.5rem))] max-w-[360px] rounded-2xl border border-[#e2e8f0] bg-white p-4 shadow-[0_14px_34px_rgba(15,23,42,0.12)]";
+
   return (
     <>
       {scriptSrc ? <Script src={scriptSrc} strategy="afterInteractive" /> : null}
@@ -290,20 +295,24 @@ export function ChatbotSlot() {
         </Script>
       ) : null}
 
-      <div className="fixed bottom-24 right-4 z-40 md:bottom-6">
+      <div className="fixed bottom-24 right-4 z-40 md:bottom-6 md:right-6">
         {open ? (
-          <Card className="mb-3 w-[340px] max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-2xl">
+          <div className={panelClass} role="dialog" aria-label="Chat assistant">
             <div className="flex items-start justify-between gap-3">
-              <div>
-                <Badge variant="teal">Speak to us now</Badge>
-                <p className="mt-1 text-sm font-semibold text-[var(--accent-navy)]">Chat assistant</p>
+              <div className="space-y-1">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--muted-foreground)]">
+                  Assistant
+                </p>
+                <p className="text-sm font-semibold leading-5 text-[var(--foreground)]">
+                  Need help choosing the right option?
+                </p>
               </div>
               <Button
                 type="button"
                 onClick={() => setOpen(false)}
                 variant="secondary"
                 size="sm"
-                className="px-2"
+                className="h-9 px-3 text-sm"
               >
                 Close
               </Button>
@@ -311,23 +320,25 @@ export function ChatbotSlot() {
 
             {renderMock ? (
               <>
-                <div className="mt-3 max-h-56 space-y-2 overflow-auto rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-3">
+                <div
+                  className="mt-3 max-h-56 space-y-2 overflow-auto rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-3"
+                >
                   {messages.map((message, index) => (
                     <div key={`${message.role}-${index}`} className="space-y-1">
                       <p
-                        className={`text-xs font-semibold uppercase tracking-[0.08em] ${
-                          message.role === "assistant" ? "text-[var(--primary)]" : "text-[var(--text-muted)]"
-                        }`}
+                        className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--muted-foreground)]"
                       >
                         {message.role === "assistant" ? "Assistant" : "You"}
                       </p>
-                      <p className="text-sm leading-6 text-[var(--text-muted)]">{message.text}</p>
+                      <p className="text-sm leading-6 text-[var(--foreground)]">
+                        {message.text}
+                      </p>
                       {message.links?.length ? (
                         <div className="flex flex-wrap gap-2 pt-1">
                           {message.links.map((link) => (
                             <Link
                               key={link.href + link.label}
-                              className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold text-[var(--accent-navy)] hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]"
+                              className="rounded-full border border-[#cbd5e1] bg-[#f8fafc] px-3.5 py-2 text-[13px] font-medium leading-5 text-[#0f172a] transition hover:bg-[#f1f5f9]"
                               href={link.href}
                             >
                               {link.label}
@@ -350,39 +361,39 @@ export function ChatbotSlot() {
                       value={input}
                       onChange={(event) => setInput(event.target.value)}
                       placeholder="Ask about price, areas, results, or booking"
+                      className="h-10 rounded-full border-[#cbd5e1] bg-white px-4 text-sm"
                     />
                     <Button
                       type="submit"
-                      size="sm"
+                      size="default"
+                      className="h-10 px-4 text-sm"
                     >
                       Send
                     </Button>
                   </div>
                 </form>
 
-                <div className="mt-2 grid grid-cols-2 gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {suggestionPrompts.map((prompt) => (
-                    <Button
+                    <button
                       key={prompt}
                       type="button"
                       onClick={() => submitPrompt(prompt)}
-                      variant="secondary"
-                      size="sm"
-                      className="h-auto whitespace-normal px-2.5 py-2 text-left text-xs"
+                      className="rounded-full border border-[#cbd5e1] bg-[#f8fafc] px-3.5 py-2 text-[13px] leading-5 text-[#0f172a] transition hover:bg-[#f1f5f9]"
                     >
                       {prompt}
-                    </Button>
+                    </button>
                   ))}
                 </div>
-                <p className="mt-3 text-xs text-[var(--text-muted)]">
+                <p className="mt-3 text-[13px] leading-5 text-[var(--muted-foreground)]">
                   {latest?.role === "assistant"
-                    ? "Ask a follow-up and I will guide you to the right page."
+                    ? "Ask a follow-up and I can guide you to the right page."
                     : "One moment while I guide you to the best next page."}
                 </p>
               </>
             ) : (
               <div className="mt-3 space-y-3">
-                <p className="text-sm leading-6 text-[var(--text-muted)]">
+                <p className="text-sm leading-6 text-[var(--muted-foreground)]">
                   Live chatbot provider mode is enabled. If the third-party widget is blocked, you can still book or contact us directly.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -395,14 +406,14 @@ export function ChatbotSlot() {
                 </div>
               </div>
             )}
-          </Card>
+          </div>
         ) : null}
 
         <Button
           type="button"
           onClick={() => setOpen((value) => !value)}
           variant="secondary"
-          className="inline-flex items-center gap-2 shadow-xl"
+          className={launcherClass}
         >
           <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
           {chatbotConfig.launcherLabel}

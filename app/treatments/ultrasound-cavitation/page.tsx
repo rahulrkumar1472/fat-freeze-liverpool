@@ -7,31 +7,31 @@ import { buildMetadata } from "@/lib/seo";
 
 const sections: ContentSection[] = [
   {
-    heading: "Where ultrasound cavitation sits in the treatment strategy",
+    heading: "Where ultrasound cavitation sits in treatment planning",
     paragraphs: [
-      "Ultrasound cavitation is discussed as an optional support treatment for selected plans.",
-      "At our clinic, most journeys begin with consultation-led fat freezing, then supportive options are considered only where they add practical value.",
+      "Ultrasound cavitation is discussed as an optional support treatment for selected cases.",
+      "Most journeys begin with consultation-led fat freezing, and supportive options are considered only where they add practical value.",
     ],
   },
   {
-    heading: "When combination planning can be useful",
+    heading: "When combination planning may be useful",
     paragraphs: [
-      "Some clients ask whether pairing modalities can improve treatment feel or progression confidence. The answer depends on anatomy, area focus, timeline, and individual response profile.",
-      "Combination planning should be phased. We avoid stacking interventions early unless there is a clear clinical rationale and operational benefit.",
+      "Some clients ask whether pairing modalities can support their plan. The answer depends on anatomy, area focus, timeline, and individual response.",
+      "Combination planning is usually phased. We avoid layering interventions early unless there is clear clinical rationale.",
     ],
   },
   {
     heading: "Clinical boundaries and expectations",
     paragraphs: [
-      "Ultrasound cavitation does not replace consultation-led assessment. It should be evaluated as part of a broader contour plan, not as a shortcut to broad weight goals.",
-      "This is not a weight-loss treatment. Results vary by individual. Suitability is assessed individually before any treatment recommendation.",
+      "Ultrasound cavitation does not replace consultation-led assessment. It is considered within a broader contour plan, not as a shortcut to broad weight goals.",
+      "This is not a weight-loss treatment. Results vary by individual. Suitability is assessed individually before recommendation.",
     ],
   },
   {
     heading: "How to decide your next step",
     paragraphs: [
-      "Start with our treatment overview so your core pathway is clear. If combination options are relevant, we discuss timing and expected value during consultation.",
-      "A practical plan always identifies the primary modality, secondary support options, and measurable review checkpoints.",
+      "Start with treatment overview so your primary pathway is clear. If combination options are relevant, we discuss timing and expected value during consultation.",
+      "A practical plan identifies the primary modality, secondary support options, and measurable review checkpoints.",
     ],
   },
 ];

@@ -7,17 +7,17 @@ import { buildMetadata } from "@/lib/seo";
 
 const sections: ContentSection[] = [
   {
-    heading: "Role of radio frequency in a fat freezing-led plan",
+    heading: "Role of radio frequency in a fat freezing-led pathway",
     paragraphs: [
       "Radio frequency skin tightening is an optional support treatment in selected plans.",
-      "Most clients start with fat freezing consultation first, then review whether supportive options could add value.",
+      "Most clients begin with fat freezing consultation, then review whether supportive options may add value.",
     ],
   },
   {
     heading: "Timing considerations",
     paragraphs: [
-      "Timing is a key decision factor. In most cases, supportive modalities should be discussed after baseline progress and review checkpoints are established.",
-      "Early over-layering can reduce decision clarity. A staged approach generally improves communication, budget control, and outcome tracking.",
+      "Timing is a key decision factor. In most cases, supportive modalities are discussed after baseline checkpoints are established.",
+      "Early over-layering can reduce clarity. A staged approach usually improves communication, budget control, and progress tracking.",
     ],
   },
   {
@@ -30,8 +30,8 @@ const sections: ContentSection[] = [
   {
     heading: "Practical pathway",
     paragraphs: [
-      "Use our treatment overview to understand the main contour route first. Then discuss whether secondary support options are appropriate for your goals and timeline.",
-      "The booking consultation is the fastest way to receive an integrated plan with clear next actions.",
+      "Use treatment overview to understand the main contour route first. Then discuss whether support options suit your goals and timeline.",
+      "Booking consultation is the fastest way to receive an integrated plan with clear next actions.",
     ],
   },
 ];

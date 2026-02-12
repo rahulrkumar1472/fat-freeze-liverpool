@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function ConsultationBanner({
-  title = "Ready for a tailored fat freezing plan?",
-  description = "Book your consultation to confirm suitability, map timeline expectations, and receive a clear staged plan.",
+  title = "Ready for a tailored treatment plan?",
+  description = "Book consultation to confirm suitability, discuss timeline expectations, and leave with clear next steps.",
 }: {
   title?: string;
   description?: string;

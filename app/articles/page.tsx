@@ -65,7 +65,7 @@ export default async function ArticlesPage({
       <PageHero
         eyebrow="Guides & Advice"
         title="Treatment guides and practical advice"
-        intro="Useful, plain-English guides to help you compare options, understand timelines, and decide when to book consultation."
+        intro="Clear, plain-English content to help you compare options, understand timelines, and decide when to book."
       />
 
       <section className="section-shell mt-8 p-6">
@@ -107,7 +107,7 @@ export default async function ArticlesPage({
         heading="Turn your research into a clear next step"
         supportLink="/fat-freezing-liverpool/"
         supportLabel="Treatment overview"
-        moneyAnchor="Cryolipolysis overview"
+        moneyAnchor="Treatment overview"
       />
 
       <FaqBlock faqs={articleHubFaqs} />

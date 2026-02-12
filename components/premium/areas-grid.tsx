@@ -11,11 +11,11 @@ export function AreasGrid({ areas }: { areas: AreaPage[] }) {
         <div>
           <Badge variant="teal">Areas We Treat</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
-            Choose your highest-priority target area
+            Choose the area you want to tackle first
           </h2>
         </div>
         <Link href="/fat-freezing/areas-we-treat/" className="text-sm font-semibold text-[var(--accent-navy)] underline">
-          View all area guidance
+          View all area pages
         </Link>
       </div>
 
@@ -31,7 +31,7 @@ export function AreasGrid({ areas }: { areas: AreaPage[] }) {
             <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{area.heroIntro}</p>
             <div className="mt-4 flex gap-2">
               <Button asChild variant="secondary" size="sm">
-                <Link href={area.path}>Read area guide</Link>
+                <Link href={area.path}>View details</Link>
               </Button>
               <Button asChild size="sm">
                 <Link href="/book/">Book</Link>

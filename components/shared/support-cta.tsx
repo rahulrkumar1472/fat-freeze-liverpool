@@ -20,7 +20,7 @@ export function SupportCta({
       <Badge variant="teal">Consultation CTA</Badge>
       <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">{heading}</h2>
       <p className="mt-3 max-w-3xl text-sm leading-8 text-[var(--text-muted)]">
-        If you are deciding between options, start with the treatment overview, review pricing, then book a consultation so we can confirm suitability.
+        If you are deciding between options, start with the treatment overview, review pricing, then book consultation so suitability can be confirmed.
       </p>
       <div className="mt-6 flex flex-wrap gap-2.5">
         <Button asChild variant="secondary">

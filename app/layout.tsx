@@ -66,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB">
-      <body className={`${inter.variable} ${playfairDisplay.variable} bg-site text-slate-900 antialiased`}>
+      <body className={`${inter.variable} ${playfairDisplay.variable} bg-site text-[var(--foreground)] antialiased`}>
         <JsonLd id="clinic-schema" data={buildClinicSchema()} />
         <div className="flex min-h-screen flex-col">
           <Header />

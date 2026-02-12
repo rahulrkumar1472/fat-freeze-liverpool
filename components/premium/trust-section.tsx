@@ -22,7 +22,7 @@ export function TrustSection() {
             Clinical standards built for confident decisions
           </h2>
           <p className="mt-4 text-sm leading-8 text-[var(--text-muted)]">
-            We start with suitability, then build a practical plan around your goals and schedule. You will always know what is realistic before you commit to treatment.
+            We start with suitability, then build a practical plan around your goals and schedule. You get clear expectations before you commit to treatment.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button asChild variant="secondary">
@@ -43,6 +43,7 @@ export function TrustSection() {
 
             <div className="mt-4 grid grid-cols-3 gap-2">
               <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                {/* TODO: Replace with a stock image of a clean treatment room and cooling fat reduction device setup. */}
                 <Image
                   src="/images/clinic-hero.png"
                   alt="Treatment room at our clinic"
@@ -53,9 +54,10 @@ export function TrustSection() {
                 />
               </div>
               <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                {/* TODO: Replace with a stock image of practitioner-led consultation and body area planning. */}
                 <Image
-                  src="/images/before-after-placeholder.svg"
-                  alt="Clinician consultation placeholder"
+                  src="/images/before-after-illustration.svg"
+                  alt="Clinician consultation in progress"
                   width={320}
                   height={220}
                   className="h-[84px] w-full object-cover"
@@ -63,9 +65,10 @@ export function TrustSection() {
                 />
               </div>
               <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
+                {/* TODO: Replace with a local access/arrival stock image to support trust and location clarity. */}
                 <Image
-                  src="/images/liverpool-map-placeholder.svg"
-                  alt="Clinic location and access placeholder"
+                  src="/images/liverpool-map-illustration.svg"
+                  alt="Clinic location and local access reference"
                   width={320}
                   height={220}
                   className="h-[84px] w-full object-cover"

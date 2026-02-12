@@ -28,17 +28,18 @@ export function ConversionHero({
   trustItems: TrustItem[];
 }) {
   return (
-    <section className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-gradient-to-br from-[var(--accent-navy)] via-[var(--accent-navy-2)] to-[var(--primary)] p-7 text-[var(--text-inverse)] shadow-2xl shadow-[rgba(15,39,66,0.2)] sm:p-10 lg:p-12">
+    <section className="hero-on-dark relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-gradient-to-br from-[var(--accent-navy)] via-[var(--accent-navy-2)] to-[var(--primary)] p-7 text-[var(--text-inverse)] shadow-2xl shadow-[rgba(15,39,66,0.2)] sm:p-10 lg:p-12">
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#0b2b4a_0%,#0f3a5c_100%)] opacity-80" />
       <div className="absolute -right-24 -top-20 h-56 w-56 rounded-full bg-[var(--primary-soft)]/30 blur-3xl" />
       <div className="absolute -bottom-20 left-6 h-52 w-52 rounded-full bg-[#dff6ee]/20 blur-3xl" />
 
       <div className="relative grid gap-8 lg:grid-cols-[1.3fr_0.9fr] lg:items-end">
         <div>
           <Badge className="w-fit border-white/20 bg-white/10 text-[#d7eef4]">{eyebrow}</Badge>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-[2rem] font-semibold leading-tight text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.3)] sm:text-[2.6rem] lg:text-[2.95rem]">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[#edf3f7] sm:text-lg">{intro}</p>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/85 sm:text-lg">{intro}</p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -61,6 +62,7 @@ export function ConversionHero({
 
         <div className="relative">
           <div className="overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-2xl">
+            {/* TODO: Replace with a premium stock photo of a clinician greeting a client in a modern Liverpool treatment room. */}
             <Image
               src="/images/clinic-hero.png"
               alt="Our clinic team in Liverpool"
