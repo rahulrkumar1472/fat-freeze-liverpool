@@ -165,7 +165,7 @@ export function buildFaqSet(topic: string, location = "Liverpool"): FaqItem[] {
         "Yes. We welcome clients from across Liverpool and surrounding areas, with appointment times available seven days a week.",
     },
     {
-      question: `What should I ask in my ${topicLabel} consultation?`,
+      question: `What should I ask during consultation about ${topicLabel}?`,
       answer:
         "Ask about suitability, expected timeline, likely session plan, cost, aftercare, and follow-up checkpoints.",
     },
