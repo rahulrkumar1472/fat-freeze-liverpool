@@ -68,7 +68,7 @@ export const corePages: Record<string, StaticPageContent> = {
   "/fat-freezing-liverpool/": {
     path: "/fat-freezing-liverpool/",
     title: "Fat Freezing Liverpool",
-    metaTitle: "Fat Freezing Liverpool | Fat Freezing Liverpool",
+    metaTitle: "Fat Freezing in Liverpool | Consultation-Led Care",
     metaDescription:
       "Everything you need to know about fat freezing in Liverpool, including suitability, treatment areas, timeline, pricing, and booking.",
     heroTitle: "Fat Freezing Liverpool",
