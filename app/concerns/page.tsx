@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { ContentPage } from "@/components/shared/content-page";
 import { PageSchema } from "@/components/seo/page-schema";
 import { buildSupportFaqs } from "@/lib/content/copy-helpers";
@@ -77,20 +80,22 @@ export default function ConcernsHubPage() {
         eyebrow="Concerns Hub"
         withInlineCtas
         beforeSections={
-          <section className="section-shell p-6">
-            <h2 className="font-display text-2xl font-semibold text-[var(--accent-navy)]">Explore your concern</h2>
+          <Card className="section-shell p-6">
+            <Badge variant="teal">Concern routes</Badge>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-[var(--accent-navy)]">Explore your concern</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {concernPages.map((concern) => (
-                <Link
+                <Button
                   key={concern.slug}
-                  href={concern.path}
-                  className="rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-4 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]"
+                  asChild
+                  variant="secondary"
+                  className="h-auto justify-start rounded-2xl border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-left text-sm font-semibold text-[var(--text)]"
                 >
-                  {concern.heroTitle}
-                </Link>
+                  <Link href={concern.path}>{concern.heroTitle}</Link>
+                </Button>
               ))}
             </div>
-          </section>
+          </Card>
         }
       />
     </>

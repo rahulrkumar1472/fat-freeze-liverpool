@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { BookingWizard } from "@/components/forms/booking-wizard";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { ContentPage } from "@/components/shared/content-page";
 import { PageSchema } from "@/components/seo/page-schema";
 import { getCorePage } from "@/lib/content/core-pages";
@@ -53,9 +55,14 @@ export default function BookPage() {
         withInlineCtas
         beforeSections={
           <div className="grid gap-4">
-            <div className="rounded-2xl border border-[#f5d39a] bg-[#fff4de] p-4 text-sm text-[#7b4f00]">
-              Same-day treatment may be available subject to clinical suitability and schedule.
-            </div>
+            <Card className="rounded-2xl border border-[#f5d39a] bg-[#fff4de] shadow-none">
+              <CardContent className="p-4">
+                <Badge className="border-[#f5d39a] bg-[#ffe6b7] text-[#7b4f00]">Availability note</Badge>
+                <p className="mt-2 text-sm text-[#7b4f00]">
+                  Same-day treatment may be available subject to clinical suitability and schedule.
+                </p>
+              </CardContent>
+            </Card>
             <BookingWizard />
           </div>
         }

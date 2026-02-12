@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
   path: page.path,
   title: page.metaTitle,
   description: page.metaDescription,
-  keywords: ["contact fat freeze liverpool", "fat freezing clinic Liverpool address"],
+  keywords: ["contact fat freezing liverpool", "fat freezing clinic Liverpool address"],
 });
 
 export default function ContactPage() {
