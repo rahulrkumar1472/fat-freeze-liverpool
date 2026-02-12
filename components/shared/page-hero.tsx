@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export function PageHero({
   title,
@@ -26,21 +28,19 @@ export function PageHero({
           loading="lazy"
         />
       </div>
-      {eyebrow ? (
-        <p className="relative text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">{eyebrow}</p>
-      ) : null}
+      {eyebrow ? <Badge className="relative w-fit border-white/20 bg-white/10 text-cyan-100">{eyebrow}</Badge> : null}
       <h1 className="relative mt-2 max-w-3xl font-display text-3xl font-semibold leading-tight sm:text-4xl">
         {title}
       </h1>
       <p className="relative mt-5 max-w-3xl leading-8 text-slate-100">{intro}</p>
       {showDefaultCtas ? (
         <div className="relative mt-6 flex flex-wrap gap-3">
-          <Link href="/book/" className="btn-book">
-            Book Consultation
-          </Link>
-          <Link href="/fat-freezing-liverpool/" className="btn-secondary bg-white/95">
-            Explore treatment
-          </Link>
+          <Button asChild size="lg">
+            <Link href="/book/">Book Consultation</Link>
+          </Button>
+          <Button asChild variant="secondary" size="lg" className="bg-white/95">
+            <Link href="/fat-freezing-liverpool/">Explore treatment</Link>
+          </Button>
         </div>
       ) : null}
       <div className="relative mt-5 grid max-w-3xl gap-2 text-xs text-cyan-100 sm:grid-cols-3">

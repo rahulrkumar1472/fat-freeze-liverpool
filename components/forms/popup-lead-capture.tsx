@@ -1,6 +1,11 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const lastShownKey = "ffl_popup_last_shown";
 const convertedKey = "ffl_popup_converted";
@@ -100,22 +105,24 @@ export function PopupLeadCapture() {
 
   return (
     <div className="fixed inset-0 z-50 bg-[rgba(15,23,42,0.35)] p-4">
-      <div className="mx-auto mt-20 w-full max-w-md rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-2xl sm:mt-24">
+      <Card className="mx-auto mt-20 w-full max-w-md rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-2xl sm:mt-24">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="eyebrow">Liverpool offer</p>
+            <Badge variant="teal">Liverpool offer</Badge>
             <h2 className="mt-2 font-display text-2xl font-semibold text-[var(--accent-navy)]">
               Claim 30% off your first treatment with us
             </h2>
           </div>
-          <button
+          <Button
             type="button"
-            className="rounded-full border border-[var(--border)] px-3 py-1 text-xs font-semibold text-[var(--text-muted)]"
+            variant="secondary"
+            size="sm"
+            className="px-3"
             onClick={() => setOpen(false)}
             aria-label="Close popup"
           >
             Close
-          </button>
+          </Button>
         </div>
 
         <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">
@@ -123,44 +130,44 @@ export function PopupLeadCapture() {
         </p>
 
         {success ? (
-          <div className="mt-4 rounded-2xl border border-[#98d5b9] bg-[#ecfff7] p-4">
+          <Card className="mt-4 rounded-2xl border border-[#98d5b9] bg-[#ecfff7] p-4 shadow-none">
             <p className="text-sm font-semibold text-emerald-900">Thanks, your enquiry has been sent.</p>
             <p className="mt-1 text-xs text-emerald-800">Our clinic team will contact you using your preferred details.</p>
-          </div>
+          </Card>
         ) : (
           <form onSubmit={onSubmit} className="mt-4 grid gap-3">
-            <label className="grid gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--text-muted)]">
-              Name
-              <input
+            <div className="grid gap-1">
+              <Label htmlFor="popup-name">Name</Label>
+              <Input
+                id="popup-name"
                 type="text"
                 value={payload.fullName}
                 onChange={(event) => setPayload((prev) => ({ ...prev, fullName: event.target.value }))}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-medium text-[var(--text)]"
                 required
               />
-            </label>
+            </div>
 
-            <label className="grid gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--text-muted)]">
-              Phone
-              <input
+            <div className="grid gap-1">
+              <Label htmlFor="popup-phone">Phone</Label>
+              <Input
+                id="popup-phone"
                 type="tel"
                 value={payload.phone}
                 onChange={(event) => setPayload((prev) => ({ ...prev, phone: event.target.value }))}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-medium text-[var(--text)]"
                 required
               />
-            </label>
+            </div>
 
-            <label className="grid gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--text-muted)]">
-              Email
-              <input
+            <div className="grid gap-1">
+              <Label htmlFor="popup-email">Email</Label>
+              <Input
+                id="popup-email"
                 type="email"
                 value={payload.email}
                 onChange={(event) => setPayload((prev) => ({ ...prev, email: event.target.value }))}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-medium text-[var(--text)]"
                 required
               />
-            </label>
+            </div>
 
             <input
               tabIndex={-1}
@@ -186,18 +193,17 @@ export function PopupLeadCapture() {
 
             {error ? <p className="text-xs font-semibold text-red-600">{error}</p> : null}
 
-            <button
+            <Button
               type="submit"
               disabled={loading || !payload.consent}
-              className="btn-primary px-4 py-3 text-sm disabled:opacity-60"
             >
               {loading ? "Sending..." : "Claim My 30% Offer"}
-            </button>
+            </Button>
 
             <p className="text-xs text-[var(--text-muted)]">This is not a weight-loss treatment. Results vary by individual.</p>
           </form>
         )}
-      </div>
+      </Card>
     </div>
   );
 }

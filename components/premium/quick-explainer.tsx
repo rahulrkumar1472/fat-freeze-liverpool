@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export function QuickExplainer() {
   return (
-    <section className="section-shell p-6 sm:p-8">
-      <p className="eyebrow">Quick explainer</p>
+    <Card className="section-shell p-6 sm:p-8">
+      <Badge variant="teal">Quick explainer</Badge>
       <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
         Cryolipolysis and fat freezing are the same consultation-led pathway
       </h2>
@@ -17,13 +20,13 @@ export function QuickExplainer() {
         </p>
       </div>
       <div className="mt-5 flex flex-wrap gap-3">
-        <Link href="/fat-freezing-liverpool/" className="btn-secondary px-4 py-2.5 text-sm">
-          Treatment overview
-        </Link>
-        <Link href="/book/" className="btn-primary px-4 py-2.5 text-sm">
-          Book Consultation
-        </Link>
+        <Button asChild variant="secondary">
+          <Link href="/fat-freezing-liverpool/">Treatment overview</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/book/">Book Consultation</Link>
+        </Button>
       </div>
-    </section>
+    </Card>
   );
 }

@@ -40,7 +40,7 @@ const faqs = buildSupportFaqs("radio frequency skin tightening support treatment
 
 export const metadata: Metadata = buildMetadata({
   path: "/treatments/radio-frequency-skin-tightening/",
-  title: "Radio Frequency Skin Tightening Support Treatment | Fat Freeze Liverpool",
+  title: "Radio Frequency Skin Tightening Support Treatment | Fat Freezing Liverpool",
   description:
     "Learn how radio frequency skin tightening can be considered as a secondary support option within a fat freezing-led treatment strategy in Liverpool.",
   keywords: ["radio frequency skin tightening Liverpool", "fat freezing RF combination"],

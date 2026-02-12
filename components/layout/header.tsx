@@ -5,7 +5,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { clsx } from "clsx";
+import { ChevronDown } from "lucide-react";
 import { navigation, siteConfig } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
 
 const OPEN_DELAY_MS = 90;
 const CLOSE_DELAY_MS = 220;
@@ -160,7 +163,7 @@ export function Header() {
         scrolled ? "shadow-[0_10px_28px_rgba(15,39,66,0.12)]" : "shadow-none",
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between gap-4 py-4">
         <div className="flex flex-col">
           <Link href="/" className="font-display text-xl font-semibold tracking-tight text-[var(--accent-navy)]">
             {siteConfig.clinicName}
@@ -168,15 +171,17 @@ export function Header() {
           <p className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--text-muted)]">Liverpool Clinic</p>
         </div>
 
-        <button
+        <Button
           type="button"
           onClick={() => setMobileOpen((value) => !value)}
-          className="inline-flex rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold text-[var(--accent-navy)] md:hidden"
+          variant="secondary"
+          size="sm"
+          className="md:hidden"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
           Menu
-        </button>
+        </Button>
 
         <nav className="hidden items-center gap-5 md:flex">
           <Link
@@ -229,7 +234,7 @@ export function Header() {
                 aria-label="Open Fat Freezing menu"
                 className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-2 py-1 text-xs font-semibold text-[var(--text-muted)] hover:border-[var(--primary)] hover:text-[var(--accent-navy)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary)]"
               >
-                <span className={clsx("inline-block transition-transform", desktopOpen ? "rotate-180" : "")}>v</span>
+                <ChevronDown className={clsx("h-3.5 w-3.5 transition-transform", desktopOpen ? "rotate-180" : "")} />
               </button>
             </div>
 
@@ -293,15 +298,15 @@ export function Header() {
             Contact
           </Link>
 
-          <Link href={navigation.primaryCta.href} className="btn-book shadow-sm">
-            {navigation.primaryCta.label}
-          </Link>
+          <Button asChild size="lg" className="px-7">
+            <Link href={navigation.primaryCta.href}>{navigation.primaryCta.label}</Link>
+          </Button>
 
-          <button type="button" onClick={openChatbot} className="btn-chat">
+          <Button type="button" onClick={openChatbot} variant="secondary">
             Speak to us now
-          </button>
+          </Button>
         </nav>
-      </div>
+      </Container>
 
       {mobileOpen ? (
         <nav className="border-t border-[var(--border)] bg-[var(--surface)] px-4 pb-5 pt-3 md:hidden">
@@ -365,13 +370,13 @@ export function Header() {
             <Link
               href="/book/"
               onClick={() => setMobileOpen(false)}
-              className="btn-book mt-2 text-center"
+              className="mt-2 rounded-xl bg-[var(--primary)] px-3 py-3 text-center text-sm font-semibold text-[var(--text-inverse)] shadow-[0_10px_24px_rgba(14,116,144,0.2)]"
             >
               Book
             </Link>
-            <button type="button" onClick={openChatbot} className="btn-chat rounded-xl px-3 py-3 text-sm">
+            <Button type="button" onClick={openChatbot} variant="secondary" className="rounded-xl px-3 py-3 text-sm">
               Speak to us now
-            </button>
+            </Button>
           </div>
         </nav>
       ) : null}

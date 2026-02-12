@@ -2,6 +2,12 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { areaPages } from "@/lib/content/areas";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 type BookingPayload = {
   appointmentDate: string;
@@ -90,7 +96,7 @@ export function BookingWizard() {
 
   if (successReference) {
     return (
-      <div className="rounded-3xl border border-[#98d5b9] bg-[#ecfff7] p-6">
+      <Card className="rounded-3xl border-[#98d5b9] bg-[#ecfff7] p-6 shadow-none">
         <h2 className="font-display text-2xl font-semibold text-emerald-900">Booking confirmed</h2>
         <p className="mt-3 text-sm leading-7 text-emerald-900">
           Thank you. Your consultation request has been submitted successfully.
@@ -99,7 +105,7 @@ export function BookingWizard() {
         <p className="mt-4 text-xs text-emerald-800">
           You will receive a confirmation email shortly. This is not a weight-loss treatment. Results vary by individual.
         </p>
-      </div>
+      </Card>
     );
   }
 
@@ -127,56 +133,55 @@ export function BookingWizard() {
       {step === 1 ? (
         <div className="grid gap-4">
           <h2 className="font-display text-2xl font-semibold text-[var(--accent-navy)]">Step 1: Personal details</h2>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Full name
-            <input
+          <div className="grid gap-2">
+            <Label htmlFor="booking-name">Full name</Label>
+            <Input
+              id="booking-name"
               type="text"
               value={payload.fullName}
               onChange={(event) => setPayload((prev) => ({ ...prev, fullName: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             />
-          </label>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Email
-            <input
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="booking-email">Email</Label>
+            <Input
+              id="booking-email"
               type="email"
               value={payload.email}
               onChange={(event) => setPayload((prev) => ({ ...prev, email: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             />
-          </label>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Phone
-            <input
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="booking-phone">Phone</Label>
+            <Input
+              id="booking-phone"
               type="tel"
               value={payload.phone}
               onChange={(event) => setPayload((prev) => ({ ...prev, phone: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             />
-          </label>
-          <button
+          </div>
+          <Button
             type="button"
             disabled={!canGoStep2}
             onClick={() => setStep(2)}
-            className="btn-primary px-5 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-50"
           >
             Continue
-          </button>
+          </Button>
         </div>
       ) : null}
 
       {step === 2 ? (
         <div className="grid gap-4">
           <h2 className="font-display text-2xl font-semibold text-[var(--accent-navy)]">Step 2: Area and appointment</h2>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Area of concern
-            <select
+          <div className="grid gap-2">
+            <Label htmlFor="booking-area">Area of concern</Label>
+            <Select
+              id="booking-area"
               value={payload.areaOfConcern}
               onChange={(event) => setPayload((prev) => ({ ...prev, areaOfConcern: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             >
               <option value="">Select an area</option>
@@ -186,25 +191,25 @@ export function BookingWizard() {
                 </option>
               ))}
               <option value="General consultation">General consultation</option>
-            </select>
-          </label>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Preferred date
-            <input
+            </Select>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="booking-date">Preferred date</Label>
+            <Input
+              id="booking-date"
               type="date"
               min={today}
               value={payload.appointmentDate}
               onChange={(event) => setPayload((prev) => ({ ...prev, appointmentDate: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             />
-          </label>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Preferred time (10:00 - 20:00)
-            <select
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="booking-time">Preferred time (10:00 - 20:00)</Label>
+            <Select
+              id="booking-time"
               value={payload.appointmentTime}
               onChange={(event) => setPayload((prev) => ({ ...prev, appointmentTime: event.target.value }))}
-              className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
               required
             >
               <option value="">Select a time</option>
@@ -213,16 +218,17 @@ export function BookingWizard() {
                   {time}
                 </option>
               ))}
-            </select>
-          </label>
-          <label className="grid gap-2 text-sm font-medium text-[var(--text)]">
-            Notes (optional)
-            <textarea
+            </Select>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="booking-notes">Notes (optional)</Label>
+            <Textarea
+              id="booking-notes"
               value={payload.notes}
               onChange={(event) => setPayload((prev) => ({ ...prev, notes: event.target.value }))}
-              className="min-h-28 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3"
+              className="min-h-28"
             />
-          </label>
+          </div>
           <input
             tabIndex={-1}
             autoComplete="off"
@@ -232,21 +238,20 @@ export function BookingWizard() {
             aria-hidden
           />
           <div className="flex flex-wrap gap-3">
-            <button
+            <Button
               type="button"
               onClick={() => setStep(1)}
-              className="btn-secondary px-5 py-3 text-sm"
+              variant="secondary"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               disabled={!canGoStep3}
               onClick={() => setStep(3)}
-              className="btn-primary px-5 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-50"
             >
               Continue
-            </button>
+            </Button>
           </div>
         </div>
       ) : null}
@@ -267,32 +272,35 @@ export function BookingWizard() {
             </span>
           </label>
 
-          <ul className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-[var(--text-muted)]">
-            <li>Name: {payload.fullName}</li>
-            <li>Email: {payload.email}</li>
-            <li>Phone: {payload.phone}</li>
-            <li>Area: {payload.areaOfConcern}</li>
-            <li>Date: {payload.appointmentDate}</li>
-            <li>Time: {payload.appointmentTime}</li>
-          </ul>
+          <Card className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-none">
+            <CardContent className="p-0 text-sm text-[var(--text-muted)]">
+              <ul className="space-y-1">
+                <li>Name: {payload.fullName}</li>
+                <li>Email: {payload.email}</li>
+                <li>Phone: {payload.phone}</li>
+                <li>Area: {payload.areaOfConcern}</li>
+                <li>Date: {payload.appointmentDate}</li>
+                <li>Time: {payload.appointmentTime}</li>
+              </ul>
+            </CardContent>
+          </Card>
 
           {error ? <p className="text-sm font-semibold text-red-600">{error}</p> : null}
 
           <div className="flex flex-wrap gap-3">
-            <button
+            <Button
               type="button"
               onClick={() => setStep(2)}
-              className="btn-secondary px-5 py-3 text-sm"
+              variant="secondary"
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               type="submit"
               disabled={!payload.consent || loading}
-              className="btn-primary px-5 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? "Submitting..." : "Confirm booking"}
-            </button>
+            </Button>
           </div>
         </div>
       ) : null}

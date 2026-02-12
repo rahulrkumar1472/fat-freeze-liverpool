@@ -7,6 +7,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { SectionRenderer } from "@/components/shared/section-renderer";
 import { SupportCta } from "@/components/shared/support-cta";
 import { FinalConversionBlock } from "@/components/premium/final-conversion-block";
+import { Container } from "@/components/ui/container";
 
 export function ContentPage({
   crumbs,
@@ -34,16 +35,18 @@ export function ContentPage({
   withInlineCtas?: boolean;
 }) {
   return (
-    <main className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 lg:px-8">
-      <BreadcrumbNav crumbs={crumbs} />
-      <PageHero title={heroTitle} intro={heroIntro} eyebrow={eyebrow} />
-      {beforeSections ? <div className="mt-10">{beforeSections}</div> : null}
-      <div className="mt-10">
-        <SectionRenderer sections={sections} withInlineCtas={withInlineCtas} />
-      </div>
-      {faqs?.length ? <FaqBlock faqs={faqs} /> : null}
-      <SupportCta supportLink={supportLink} supportLabel={supportLabel} moneyAnchor={moneyAnchor} />
-      <FinalConversionBlock />
+    <main className="py-8">
+      <Container>
+        <BreadcrumbNav crumbs={crumbs} />
+        <PageHero title={heroTitle} intro={heroIntro} eyebrow={eyebrow} />
+        {beforeSections ? <div className="mt-10">{beforeSections}</div> : null}
+        <div className="mt-10">
+          <SectionRenderer sections={sections} withInlineCtas={withInlineCtas} />
+        </div>
+        {faqs?.length ? <FaqBlock faqs={faqs} /> : null}
+        <SupportCta supportLink={supportLink} supportLabel={supportLabel} moneyAnchor={moneyAnchor} />
+        <FinalConversionBlock />
+      </Container>
     </main>
   );
 }

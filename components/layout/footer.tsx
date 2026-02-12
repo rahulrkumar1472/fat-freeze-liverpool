@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { clinicTrustNotes, liverpoolDistrictSignals, siteConfig } from "@/lib/site-config";
+import { Badge } from "@/components/ui/badge";
+import { Container } from "@/components/ui/container";
 
 const treatmentLinks = [
   { label: "Fat Freezing Liverpool", href: "/fat-freezing-liverpool/" },
@@ -59,7 +61,7 @@ function LinkList({ title, links }: { title: string; links: Array<{ label: strin
 export function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--accent-navy)] text-slate-100">
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <Container className="py-14">
         <div className="grid gap-10 xl:grid-cols-[1.15fr_1fr_1fr_1fr_1fr]">
           <div>
             <h2 className="font-display text-xl font-semibold">{siteConfig.clinicName}</h2>
@@ -81,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-[#26445e] bg-[#0d2238] p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8ec7d6]">Local coverage</p>
+          <Badge className="border-[#316084] bg-[#15314d] text-[#8ec7d6]">Local coverage</Badge>
           <p className="mt-2 text-sm leading-8 text-slate-300">
             We provide consultation-led fat freezing and cryolipolysis care across Liverpool and nearby districts. If you are comparing options, start with our treatment overview, then move to pricing and booking when you are ready.
             <Link className="mx-1 font-semibold text-white underline" href="/fat-freezing-liverpool/">
@@ -95,7 +97,7 @@ export function Footer() {
           </p>
           <p className="mt-3 text-xs leading-6 text-slate-400">{liverpoolDistrictSignals.join(" • ")}</p>
         </div>
-      </div>
+      </Container>
 
       <div className="border-t border-[#26445e] px-4 py-6 text-center text-xs text-slate-400">
         © {new Date().getFullYear()} {siteConfig.clinicName}. All rights reserved.

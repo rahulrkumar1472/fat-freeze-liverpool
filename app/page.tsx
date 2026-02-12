@@ -10,13 +10,16 @@ import { ConversionHero } from "@/components/premium/conversion-hero";
 import { FinalConversionBlock } from "@/components/premium/final-conversion-block";
 import { MapContactStrip } from "@/components/premium/map-contact-strip";
 import { ProcessTimeline } from "@/components/premium/process-timeline";
+import { PricingTeaser } from "@/components/premium/pricing-teaser";
 import { QuickExplainer } from "@/components/premium/quick-explainer";
+import { Section } from "@/components/premium/section";
 import { TestimonialsSection } from "@/components/premium/testimonials-section";
 import { TrustSection } from "@/components/premium/trust-section";
 import { areaPages } from "@/lib/content/areas";
 import { getCorePage } from "@/lib/content/core-pages";
 import { concernPages } from "@/lib/content/concerns";
 import { buildMetadata } from "@/lib/seo";
+import { Container } from "@/components/ui/container";
 
 const homePageContent = getCorePage("/");
 
@@ -41,21 +44,22 @@ export default function HomePage() {
   const crumbs = [{ name: "Home", path: "/" }];
 
   return (
-    <main className="mx-auto w-full max-w-[1280px] px-4 py-8 sm:px-6 lg:px-8">
+    <main className="pb-16">
       <PageSchema
         crumbs={crumbs}
         faqs={homePageContent.faqs}
         webPage={{
           path: "/",
-          name: "Fat Freeze Liverpool Home",
+          name: "Fat Freezing Liverpool Home",
           type: "MedicalWebPage",
           description:
-            "Homepage for Fat Freeze Liverpool with consultation-led cryolipolysis pathways, key area guidance, trust information, and booking CTAs.",
+            "Homepage for our Liverpool clinic with consultation-led cryolipolysis pathways, key area guidance, trust information, and booking CTAs.",
         }}
       />
-      <BreadcrumbNav crumbs={crumbs} />
-
-      <div className="grid gap-8">
+      <Container className="pt-8">
+        <BreadcrumbNav crumbs={crumbs} />
+      </Container>
+      <Section className="pt-4">
         <ConversionHero
           eyebrow="Premium Liverpool Clinic"
           title="Modern, consultation-led fat freezing in Liverpool"
@@ -70,11 +74,14 @@ export default function HomePage() {
             { label: "Service focus", value: "Non-Invasive" },
           ]}
         />
-
+      </Section>
+      <Section className="py-6">
         <TrustSection />
-
+      </Section>
+      <Section className="py-6">
         <QuickExplainer />
-
+      </Section>
+      <Section className="py-6">
         <BenefitsStrip
           items={[
             {
@@ -94,11 +101,14 @@ export default function HomePage() {
             },
           ]}
         />
-
+      </Section>
+      <Section className="py-6">
         <AreasGrid areas={areaPages} />
-
+      </Section>
+      <Section className="py-6">
         <ConcernsGrid concerns={concernPages} />
-
+      </Section>
+      <Section className="py-6">
         <ProcessTimeline
           steps={[
             {
@@ -119,20 +129,28 @@ export default function HomePage() {
             },
           ]}
         />
-
+      </Section>
+      <Section className="py-6">
+        <PricingTeaser />
+      </Section>
+      <Section className="py-6">
         <ConsultationBanner
           title="Book your consultation in one click"
           description="Choose your slot online and receive confirmation by email. Same-day treatment may be available subject to suitability and schedule."
         />
-
+      </Section>
+      <Section className="py-6">
         <TestimonialsSection />
-
+      </Section>
+      <Section className="py-6">
         <MapContactStrip />
-
+      </Section>
+      <Section className="py-6">
         {homePageContent.faqs?.length ? <FaqBlock faqs={homePageContent.faqs} /> : null}
-
+      </Section>
+      <Section className="py-6">
         <FinalConversionBlock />
-      </div>
+      </Section>
     </main>
   );
 }

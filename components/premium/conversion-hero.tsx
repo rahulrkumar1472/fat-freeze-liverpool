@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 type TrustItem = {
   label: string;
@@ -32,19 +34,19 @@ export function ConversionHero({
 
       <div className="relative grid gap-8 lg:grid-cols-[1.3fr_0.9fr] lg:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d7eef4]">{eyebrow}</p>
+          <Badge className="w-fit border-white/20 bg-white/10 text-[#d7eef4]">{eyebrow}</Badge>
           <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#edf3f7] sm:text-lg">{intro}</p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href={primaryHref} className="btn-book inline-flex items-center">
-              {primaryLabel}
-            </Link>
-            <Link href={secondaryHref} className="btn-secondary inline-flex items-center bg-white/95 px-5 py-3 text-sm">
-              {secondaryLabel}
-            </Link>
+            <Button asChild size="lg">
+              <Link href={primaryHref}>{primaryLabel}</Link>
+            </Button>
+            <Button asChild variant="secondary" size="lg" className="bg-white/95">
+              <Link href={secondaryHref}>{secondaryLabel}</Link>
+            </Button>
           </div>
 
           <div className="mt-7 grid gap-3 sm:grid-cols-3">

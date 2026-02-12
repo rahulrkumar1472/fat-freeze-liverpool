@@ -31,7 +31,7 @@ export default function AboutPage() {
         extraSchemas={[buildAboutPageSchema()]}
         webPage={{
           path: "/about/",
-          name: "About Fat Freeze Liverpool",
+          name: "About Fat Freezing Liverpool",
           type: "AboutPage",
           description: page.metaDescription,
         }}

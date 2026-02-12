@@ -7,6 +7,7 @@ import { FaqBlock } from "@/components/shared/faq-block";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionRenderer } from "@/components/shared/section-renderer";
 import { SupportCta } from "@/components/shared/support-cta";
+import { Button } from "@/components/ui/button";
 import { articles, buildArticleFaqs, buildArticleSections, getArticleBySlug } from "@/lib/content/articles";
 import { buildBlogPostingSchema, buildMetadata } from "@/lib/seo";
 
@@ -85,27 +86,27 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           Use this guide to understand the topic, then move through the key pages below for pricing, area detail, timeline expectations, and booking.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href="/fat-freezing-liverpool/">
-            Treatment overview
-          </Link>
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href="/pricing/">
-            Pricing
-          </Link>
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href="/fat-freezing/areas-we-treat/">
-            Areas
-          </Link>
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href="/fat-freezing/results-timeline/">
-            Results
-          </Link>
-          <Link className="btn-primary px-3 py-1.5 text-xs" href="/book/">
-            Book consultation
-          </Link>
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href="/contact/">
-            Contact
-          </Link>
-          <Link className="btn-secondary px-3 py-1.5 text-xs" href={article.supportLink}>
-            {article.supportLinkLabel}
-          </Link>
+          <Button asChild variant="secondary" size="sm">
+            <Link href="/fat-freezing-liverpool/">Treatment overview</Link>
+          </Button>
+          <Button asChild variant="secondary" size="sm">
+            <Link href="/pricing/">Pricing</Link>
+          </Button>
+          <Button asChild variant="secondary" size="sm">
+            <Link href="/fat-freezing/areas-we-treat/">Areas</Link>
+          </Button>
+          <Button asChild variant="secondary" size="sm">
+            <Link href="/fat-freezing/results-timeline/">Results</Link>
+          </Button>
+          <Button asChild size="sm">
+            <Link href="/book/">Book consultation</Link>
+          </Button>
+          <Button asChild variant="secondary" size="sm">
+            <Link href="/contact/">Contact</Link>
+          </Button>
+          <Button asChild variant="secondary" size="sm">
+            <Link href={article.supportLink}>{article.supportLinkLabel}</Link>
+          </Button>
         </div>
       </section>
 

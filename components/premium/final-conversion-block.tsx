@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function FinalConversionBlock() {
   return (
-    <section className="mt-14 rounded-[2rem] border border-[var(--border)] bg-[var(--accent-navy)] p-8 text-[var(--text-inverse)] shadow-xl sm:p-10">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d7eef4]">Next step</p>
+    <Card className="mt-14 rounded-[2rem] border-[var(--accent-navy)] bg-[var(--accent-navy)] text-[var(--text-inverse)] shadow-xl">
+      <CardContent className="p-8 sm:p-10">
+      <Badge className="border-white/20 bg-white/10 text-[#d7eef4]">Next step</Badge>
       <h2 className="mt-2 font-display text-3xl font-semibold leading-tight sm:text-4xl">
         Book your consultation with our Liverpool clinic
       </h2>
@@ -11,14 +15,15 @@ export function FinalConversionBlock() {
         A focused consultation can save weeks of uncertainty. We confirm suitability, explain realistic milestones, and map your plan in clear steps.
       </p>
       <div className="mt-7 flex flex-wrap gap-3">
-        <Link href="/book/" className="btn-book px-6 py-3 text-sm">
-          Book Consultation
-        </Link>
-        <Link href="/contact/" className="btn-secondary border-white/30 bg-white/95 px-6 py-3 text-sm">
-          Contact Clinic
-        </Link>
+        <Button asChild size="lg">
+          <Link href="/book/">Book Consultation</Link>
+        </Button>
+        <Button asChild size="lg" variant="secondary" className="border-white/30 bg-white/95">
+          <Link href="/contact/">Contact Clinic</Link>
+        </Button>
       </div>
       <p className="mt-5 text-xs text-[#d7eef4]">This is not a weight-loss treatment. Results vary by individual.</p>
-    </section>
+      </CardContent>
+    </Card>
   );
 }

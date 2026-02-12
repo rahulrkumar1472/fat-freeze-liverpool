@@ -40,7 +40,7 @@ const faqs = buildSupportFaqs("ultrasound cavitation support treatment");
 
 export const metadata: Metadata = buildMetadata({
   path: "/treatments/ultrasound-cavitation/",
-  title: "Ultrasound Cavitation Support Treatment | Fat Freeze Liverpool",
+  title: "Ultrasound Cavitation Support Treatment | Fat Freezing Liverpool",
   description:
     "Understand how ultrasound cavitation may be used as a secondary support treatment around consultation-led fat freezing pathways in Liverpool.",
   keywords: ["ultrasound cavitation Liverpool", "fat freezing combination treatment"],

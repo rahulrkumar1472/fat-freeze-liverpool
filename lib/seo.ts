@@ -166,7 +166,7 @@ export function buildAboutPageSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About Fat Freeze Liverpool",
+    name: "About Fat Freezing Liverpool",
     url: canonicalUrl("/about/"),
     isPartOf: canonicalUrl("/"),
   };
@@ -176,7 +176,7 @@ export function buildContactPageSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact Fat Freeze Liverpool",
+    name: "Contact Fat Freezing Liverpool",
     url: canonicalUrl("/contact/"),
     isPartOf: canonicalUrl("/"),
   };

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const trustPoints = [
   "Qualified practitioners",
@@ -10,10 +13,10 @@ const trustPoints = [
 
 export function TrustSection() {
   return (
-    <section className="section-shell p-6 sm:p-8">
+    <Card className="section-shell p-6 sm:p-8">
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         <div>
-          <p className="eyebrow">Trust and credibility</p>
+          <Badge variant="teal">Trust and credibility</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
             Clinical standards built for confident decisions
           </h2>
@@ -21,16 +24,17 @@ export function TrustSection() {
             We start with suitability, then build a practical plan around your goals and schedule. You will always know what is realistic before you commit to treatment.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/about/" className="btn-secondary px-4 py-2 text-sm">
-              About clinic standards
-            </Link>
-            <Link href="/medical-disclaimer/" className="btn-secondary px-4 py-2 text-sm">
-              Medical disclaimer
-            </Link>
+            <Button asChild variant="secondary">
+              <Link href="/about/">About clinic standards</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link href="/medical-disclaimer/">Medical disclaimer</Link>
+            </Button>
           </div>
         </div>
 
-        <div className="surface-soft p-5">
+        <Card className="surface-soft p-5 shadow-none">
+          <CardContent className="p-0">
           <p className="text-sm font-semibold text-[var(--accent-navy)]">Clinic details</p>
           <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{siteConfig.address}</p>
           <p className="mt-1 text-sm text-[var(--text-muted)]">Phone: {siteConfig.phone}</p>
@@ -43,8 +47,9 @@ export function TrustSection() {
               </li>
             ))}
           </ul>
-        </div>
+          </CardContent>
+        </Card>
       </div>
-    </section>
+    </Card>
   );
 }

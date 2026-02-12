@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export function MapContactStrip() {
   return (
-    <section className="section-shell p-6 sm:p-8">
+    <Card className="section-shell p-6 sm:p-8">
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <p className="eyebrow">Clinic location</p>
+          <Badge variant="teal">Clinic location</Badge>
           <h2 className="mt-1 font-display text-2xl font-semibold text-[var(--accent-navy)] sm:text-3xl">
             Visit our Liverpool clinic
           </h2>
@@ -16,12 +19,12 @@ export function MapContactStrip() {
           <p className="mt-1 text-sm text-[var(--text-muted)]">Email: {siteConfig.enquiryEmail}</p>
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/contact/" className="btn-secondary px-4 py-2.5 text-sm">
-              Contact page
-            </Link>
-            <Link href="/book/" className="btn-primary px-4 py-2.5 text-sm">
-              Book
-            </Link>
+            <Button asChild variant="secondary">
+              <Link href="/contact/">Contact page</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/book/">Book</Link>
+            </Button>
           </div>
         </div>
 
@@ -36,6 +39,6 @@ export function MapContactStrip() {
           />
         </div>
       </div>
-    </section>
+    </Card>
   );
 }

@@ -26,11 +26,11 @@ const contactFaqs = buildFaqSet("contacting the clinic", "Liverpool");
 export const corePages: Record<string, StaticPageContent> = {
   "/": {
     path: "/",
-    title: "Fat Freeze Liverpool",
-    metaTitle: "Fat Freeze Liverpool | Cryolipolysis Clinic",
+    title: "Fat Freezing Liverpool",
+    metaTitle: "Fat Freezing Liverpool | Cryolipolysis Clinic",
     metaDescription:
       "Premium Liverpool clinic for consultation-led fat freezing. Learn how it works, view prices, and book your appointment online.",
-    heroTitle: "Fat Freeze Liverpool",
+    heroTitle: "Fat Freezing Liverpool",
     heroIntro:
       "Consultation-led cryolipolysis in Liverpool with clear planning, premium care, and a straightforward route to booking.",
     sections: [
@@ -68,12 +68,12 @@ export const corePages: Record<string, StaticPageContent> = {
   "/fat-freezing-liverpool/": {
     path: "/fat-freezing-liverpool/",
     title: "Fat Freezing Liverpool",
-    metaTitle: "Fat Freezing Liverpool | Fat Freeze Liverpool",
+    metaTitle: "Fat Freezing Liverpool | Fat Freezing Liverpool",
     metaDescription:
       "Everything you need to know about fat freezing in Liverpool, including suitability, treatment areas, timeline, pricing, and booking.",
     heroTitle: "Fat Freezing Liverpool",
     heroIntro:
-      "A complete guide to treatment, suitability, results, and consultation booking at Fat Freeze Liverpool.",
+      "A complete guide to treatment, suitability, results, and consultation booking at Fat Freezing Liverpool.",
     sections: [
       {
         heading: "What fat freezing is",
@@ -137,7 +137,7 @@ export const corePages: Record<string, StaticPageContent> = {
   "/fat-freezing/how-it-works/": {
     path: "/fat-freezing/how-it-works/",
     title: "How Fat Freezing Works",
-    metaTitle: "How Fat Freezing Works | Fat Freeze Liverpool",
+    metaTitle: "How Fat Freezing Works | Fat Freezing Liverpool",
     metaDescription:
       "Plain-English guide to how cryolipolysis works, what you may feel, how follow-up works, and what to expect after treatment.",
     heroTitle: "How Fat Freezing Works",
@@ -230,7 +230,7 @@ export const corePages: Record<string, StaticPageContent> = {
   "/pricing/": {
     path: "/pricing/",
     title: "Pricing",
-    metaTitle: "Fat Freezing Prices Liverpool | Fat Freeze",
+    metaTitle: "Fat Freezing Prices Liverpool | Our Clinic",
     metaDescription:
       "See our fat freezing package prices in Liverpool, what is included, and how to estimate applicators before booking.",
     heroTitle: "Pricing",
@@ -297,11 +297,11 @@ export const corePages: Record<string, StaticPageContent> = {
   },
   "/about/": {
     path: "/about/",
-    title: "About Fat Freeze Liverpool",
-    metaTitle: "About Fat Freeze Liverpool | Clinic Standards",
+    title: "About Fat Freezing Liverpool",
+    metaTitle: "About Fat Freezing Liverpool | Clinic Standards",
     metaDescription:
-      "Meet Fat Freeze Liverpool and learn about practitioner standards, consultation approach, and six-month protocol reviews.",
-    heroTitle: "About Fat Freeze Liverpool",
+      "Meet Fat Freezing Liverpool and learn about practitioner standards, consultation approach, and six-month protocol reviews.",
+    heroTitle: "About Fat Freezing Liverpool",
     heroIntro:
       "A Liverpool clinic focused on clear communication, safe planning, and premium client care.",
     sections: [
@@ -332,10 +332,10 @@ export const corePages: Record<string, StaticPageContent> = {
   "/contact/": {
     path: "/contact/",
     title: "Contact",
-    metaTitle: "Contact Fat Freeze Liverpool Clinic",
+    metaTitle: "Contact Fat Freezing Liverpool Clinic",
     metaDescription:
-      "Contact Fat Freeze Liverpool at 67-83 Norfolk St, Liverpool L1 0BG. Call 0330 053 5015 or email contact@fatfreezeliverpool.co.uk.",
-    heroTitle: "Contact Fat Freeze Liverpool",
+      "Contact Fat Freezing Liverpool at 67-83 Norfolk St, Liverpool L1 0BG. Call 0330 053 5015 or email contact@fatfreezeliverpool.co.uk.",
+    heroTitle: "Contact Fat Freezing Liverpool",
     heroIntro:
       "Talk to our team about treatment options, appointment availability, and consultation support.",
     sections: [
@@ -366,7 +366,7 @@ export const corePages: Record<string, StaticPageContent> = {
   "/faq/": {
     path: "/faq/",
     title: "FAQ",
-    metaTitle: "Fat Freezing FAQ | Fat Freeze Liverpool",
+    metaTitle: "Fat Freezing FAQ | Fat Freezing Liverpool",
     metaDescription:
       "Answers to common questions about fat freezing in Liverpool, including suitability, pricing, timeline, and booking.",
     heroTitle: "Frequently Asked Questions",
@@ -395,4 +395,3 @@ export const corePages: Record<string, StaticPageContent> = {
 export function getCorePage(path: string) {
   return corePages[path];
 }
-

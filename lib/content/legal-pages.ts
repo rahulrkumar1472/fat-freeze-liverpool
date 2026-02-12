@@ -13,18 +13,18 @@ export type LegalPageContent = {
 export const legalPages: Record<string, LegalPageContent> = {
   "/terms-and-conditions/": {
     path: "/terms-and-conditions/",
-    title: "Terms and Conditions | Fat Freeze Liverpool",
-    metaTitle: "Terms and Conditions | Fat Freeze Liverpool",
+    title: "Terms and Conditions | Fat Freezing Liverpool",
+    metaTitle: "Terms and Conditions | Fat Freezing Liverpool",
     metaDescription:
-      "Read Fat Freeze Liverpool terms and conditions covering consultation booking, practitioner standards, suitability, treatment boundaries, and service responsibilities.",
+      "Read Fat Freezing Liverpool terms and conditions covering consultation booking, practitioner standards, suitability, treatment boundaries, and service responsibilities.",
     heroTitle: "Terms and Conditions",
     heroIntro:
-      "These terms govern website use, consultation bookings, and treatment service delivery at Fat Freeze Liverpool.",
+      "These terms govern website use, consultation bookings, and treatment service delivery at Fat Freezing Liverpool.",
     sections: [
       {
         heading: "1. Service scope and acceptance",
         paragraphs: [
-          "By accessing this website or booking a consultation, you agree to these terms. Fat Freeze Liverpool provides consultation-led non-invasive body contouring services subject to suitability assessment and practitioner judgement.",
+          "By accessing this website or booking a consultation, you agree to these terms. Fat Freezing Liverpool provides consultation-led non-invasive body contouring services subject to suitability assessment and practitioner judgement.",
           "Website content is informational and does not create a medical diagnosis, treatment guarantee, or emergency care relationship.",
         ],
       },
@@ -38,7 +38,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         heading: "3. Suitability and treatment decisions",
         paragraphs: [
-          "All treatment recommendations are conditional on consultation, health screening, and area-specific assessment. Fat Freeze Liverpool may decline or defer treatment where safety, expectation mismatch, or contraindication concerns are identified.",
+          "All treatment recommendations are conditional on consultation, health screening, and area-specific assessment. Fat Freezing Liverpool may decline or defer treatment where safety, expectation mismatch, or contraindication concerns are identified.",
           "Fat freezing is not a weight-loss treatment. Results vary by individual and no guaranteed outcome is offered.",
         ],
       },
@@ -52,7 +52,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         heading: "5. Liability boundaries",
         paragraphs: [
-          "To the fullest extent permitted by law, Fat Freeze Liverpool is not liable for indirect, consequential, or speculative loss arising from website use, appointment delays, or misunderstanding of informational content.",
+          "To the fullest extent permitted by law, Fat Freezing Liverpool is not liable for indirect, consequential, or speculative loss arising from website use, appointment delays, or misunderstanding of informational content.",
           "Nothing in these terms limits liability where exclusion is not permitted under applicable law.",
         ],
       },
@@ -67,19 +67,19 @@ export const legalPages: Record<string, LegalPageContent> = {
   },
   "/privacy-policy/": {
     path: "/privacy-policy/",
-    title: "Privacy Policy | Fat Freeze Liverpool",
-    metaTitle: "Privacy Policy | Fat Freeze Liverpool",
+    title: "Privacy Policy | Fat Freezing Liverpool",
+    metaTitle: "Privacy Policy | Fat Freezing Liverpool",
     metaDescription:
-      "Fat Freeze Liverpool privacy policy covering lawful basis, data collection, communications handling, retention, rights, and clinic contact details.",
+      "Fat Freezing Liverpool privacy policy covering lawful basis, data collection, communications handling, retention, rights, and clinic contact details.",
     heroTitle: "Privacy Policy",
     heroIntro:
-      "This policy explains how Fat Freeze Liverpool collects, uses, stores, and protects personal information.",
+      "This policy explains how Fat Freezing Liverpool collects, uses, stores, and protects personal information.",
     sections: [
       {
         heading: "1. Data controller and contact",
         paragraphs: [
-          "Fat Freeze Liverpool is the data controller for personal information collected through this website and consultation workflows. Contact: contact@fatfreezeliverpool.co.uk, 67-83 Norfolk St, Liverpool L1 0BG.",
-          "Where this policy references 'we', 'our', or 'us', it refers to Fat Freeze Liverpool.",
+          "Fat Freezing Liverpool is the data controller for personal information collected through this website and consultation workflows. Contact: contact@fatfreezeliverpool.co.uk, 67-83 Norfolk St, Liverpool L1 0BG.",
+          "Where this policy references 'we', 'our', or 'us', it refers to Fat Freezing Liverpool.",
         ],
       },
       {
@@ -121,10 +121,10 @@ export const legalPages: Record<string, LegalPageContent> = {
   },
   "/cookie-policy/": {
     path: "/cookie-policy/",
-    title: "Cookie Policy | Fat Freeze Liverpool",
-    metaTitle: "Cookie Policy | Fat Freeze Liverpool",
+    title: "Cookie Policy | Fat Freezing Liverpool",
+    metaTitle: "Cookie Policy | Fat Freezing Liverpool",
     metaDescription:
-      "Learn how Fat Freeze Liverpool uses cookies for essential functionality, analytics, consent preferences, and website performance monitoring.",
+      "Learn how Fat Freezing Liverpool uses cookies for essential functionality, analytics, consent preferences, and website performance monitoring.",
     heroTitle: "Cookie Policy",
     heroIntro:
       "This policy explains what cookies are used on our website and how you can manage your preferences.",
@@ -168,10 +168,10 @@ export const legalPages: Record<string, LegalPageContent> = {
   },
   "/medical-disclaimer/": {
     path: "/medical-disclaimer/",
-    title: "Medical Disclaimer | Fat Freeze Liverpool",
-    metaTitle: "Medical Disclaimer | Fat Freeze Liverpool",
+    title: "Medical Disclaimer | Fat Freezing Liverpool",
+    metaTitle: "Medical Disclaimer | Fat Freezing Liverpool",
     metaDescription:
-      "Medical disclaimer for Fat Freeze Liverpool covering informational limits, suitability, treatment variability, and clinical responsibility boundaries.",
+      "Medical disclaimer for Fat Freezing Liverpool covering informational limits, suitability, treatment variability, and clinical responsibility boundaries.",
     heroTitle: "Medical Disclaimer",
     heroIntro:
       "Important clinical boundaries for interpretation of website information and treatment expectations.",
@@ -207,7 +207,7 @@ export const legalPages: Record<string, LegalPageContent> = {
       {
         heading: "5. Responsibility boundaries",
         paragraphs: [
-          "Fat Freeze Liverpool is responsible for delivering services within the scope of booked consultations and agreed protocols. We are not responsible for independent decisions made without consultation or contrary to provided guidance.",
+          "Fat Freezing Liverpool is responsible for delivering services within the scope of booked consultations and agreed protocols. We are not responsible for independent decisions made without consultation or contrary to provided guidance.",
           "If you experience urgent health concerns, contact emergency or appropriate medical services immediately.",
         ],
       },

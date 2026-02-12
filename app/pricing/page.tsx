@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContentPage } from "@/components/shared/content-page";
 import { PageSchema } from "@/components/seo/page-schema";
+import { Button } from "@/components/ui/button";
 import { getCorePage } from "@/lib/content/core-pages";
 import { buildMetadata } from "@/lib/seo";
 
@@ -13,7 +14,7 @@ if (!page) {
 
 export const metadata: Metadata = buildMetadata({
   path: page.path,
-  title: "Fat Freezing Prices Liverpool | Fat Freeze",
+  title: "Fat Freezing Prices Liverpool | Our Clinic",
   description: page.metaDescription,
   keywords: ["fat freezing cost Liverpool", "fat freezing pricing Liverpool", "cryolipolysis consultation price"],
 });
@@ -74,8 +75,8 @@ export default function PricingPage() {
         sections={page.sections}
         faqs={page.faqs}
         supportLink="/fat-freezing-liverpool/"
-        supportLabel="fat freezing service page"
-        moneyAnchor="cryolipolysis liverpool"
+        supportLabel="Treatment overview"
+        moneyAnchor="Cryolipolysis guide"
         eyebrow="Transparent Pricing"
         withInlineCtas
         beforeSections={
@@ -102,9 +103,9 @@ export default function PricingPage() {
                     <p className="mt-4 text-sm text-[var(--text-muted)]">Single applicator option with direct booking.</p>
                   )}
 
-                  <Link href="/book/" className="btn-primary mt-5 inline-flex px-5 py-2.5 text-sm">
-                    Book Now
-                  </Link>
+                  <Button asChild className="mt-5">
+                    <Link href="/book/">Book Now</Link>
+                  </Button>
                 </article>
               ))}
             </div>

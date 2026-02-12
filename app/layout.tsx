@@ -24,7 +24,7 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.canonicalOrigin),
   title: {
-    default: "Fat Freeze Liverpool | Consultation-Led Body Contouring",
+    default: "Fat Freezing Liverpool | Consultation-Led Care",
     template: "%s",
   },
   description:
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "/",
     siteName: siteConfig.clinicName,
-    title: "Fat Freeze Liverpool",
+    title: "Fat Freezing Liverpool",
     description:
       "Consultation-led fat freezing and cryolipolysis in Liverpool with realistic expectations and measurable planning.",
     images: [
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: "/images/og-default.svg",
         width: 1200,
         height: 630,
-        alt: "Fat Freeze Liverpool",
+        alt: "Fat Freezing Liverpool",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fat Freeze Liverpool",
+    title: "Fat Freezing Liverpool",
     description:
       "Consultation-led fat freezing and cryolipolysis in Liverpool with realistic expectations and measurable planning.",
     images: ["/images/og-default.svg"],

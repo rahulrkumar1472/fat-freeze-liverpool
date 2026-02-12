@@ -4,6 +4,10 @@ import Link from "next/link";
 import Script from "next/script";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { chatbotConfig } from "@/lib/chatbot-config";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 const mode = chatbotConfig.mode;
 const scriptSrc = chatbotConfig.scriptSrc;
@@ -203,19 +207,9 @@ function getIntentResponse(intent: Intent, userInput: string, history: Message[]
 
 export function ChatbotSlot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const handleOpen = () => setOpen(true);
-    window.addEventListener("chatbot:open", handleOpen);
-    return () => window.removeEventListener("chatbot:open", handleOpen);
-  }, []);
-
-  useEffect(() => {
-    const raw = window.sessionStorage.getItem(storageKey);
-    if (!raw) {
-      setMessages([
+  const [messages, setMessages] = useState<Message[]>(() => {
+    if (typeof window === "undefined") {
+      return [
         createMessage(
           "assistant",
           "Hi, welcome to our clinic. Ask me about pricing, areas, suitability, results, or booking.",
@@ -224,21 +218,40 @@ export function ChatbotSlot() {
             { label: "Book consultation", href: "/book/" },
           ],
         ),
-      ]);
-      return;
+      ];
+    }
+
+    const raw = window.sessionStorage.getItem(storageKey);
+    if (!raw) {
+      return [
+        createMessage(
+          "assistant",
+          "Hi, welcome to our clinic. Ask me about pricing, areas, suitability, results, or booking.",
+          [
+            { label: "View pricing", href: "/pricing/" },
+            { label: "Book consultation", href: "/book/" },
+          ],
+        ),
+      ];
     }
 
     try {
       const parsed = JSON.parse(raw) as Message[];
       if (Array.isArray(parsed) && parsed.length > 0) {
-        setMessages(parsed);
-        return;
+        return parsed;
       }
     } catch {
       // Ignore parse errors and start a fresh session.
     }
 
-    setMessages([createMessage("assistant", "Hi, how can we help today?")]);
+    return [createMessage("assistant", "Hi, how can we help today?")];
+  });
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    const handleOpen = () => setOpen(true);
+    window.addEventListener("chatbot:open", handleOpen);
+    return () => window.removeEventListener("chatbot:open", handleOpen);
   }, []);
 
   useEffect(() => {
@@ -279,19 +292,21 @@ export function ChatbotSlot() {
 
       <div className="fixed bottom-24 right-4 z-40 md:bottom-6">
         {open ? (
-          <div className="mb-3 w-[340px] max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-2xl">
+          <Card className="mb-3 w-[340px] max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-2xl">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="eyebrow">Speak to us now</p>
+                <Badge variant="teal">Speak to us now</Badge>
                 <p className="mt-1 text-sm font-semibold text-[var(--accent-navy)]">Chat assistant</p>
               </div>
-              <button
+              <Button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-[var(--border)] px-2 py-1 text-xs font-semibold text-[var(--text-muted)]"
+                variant="secondary"
+                size="sm"
+                className="px-2"
               >
                 Close
-              </button>
+              </Button>
             </div>
 
             {renderMock ? (
@@ -329,33 +344,34 @@ export function ChatbotSlot() {
                     Ask a question
                   </label>
                   <div className="flex gap-2">
-                    <input
+                    <Input
                       id="chatbot-input"
                       type="text"
                       value={input}
                       onChange={(event) => setInput(event.target.value)}
                       placeholder="Ask about price, areas, results, or booking"
-                      className="h-10 w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 text-sm text-[var(--text)] placeholder:text-[var(--text-muted)]"
                     />
-                    <button
+                    <Button
                       type="submit"
-                      className="btn-primary h-10 px-3 text-xs"
+                      size="sm"
                     >
                       Send
-                    </button>
+                    </Button>
                   </div>
                 </form>
 
                 <div className="mt-2 grid grid-cols-2 gap-2">
                   {suggestionPrompts.map((prompt) => (
-                    <button
+                    <Button
                       key={prompt}
                       type="button"
                       onClick={() => submitPrompt(prompt)}
-                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-2.5 py-2 text-xs font-semibold text-[var(--accent-navy)] hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]"
+                      variant="secondary"
+                      size="sm"
+                      className="h-auto whitespace-normal px-2.5 py-2 text-left text-xs"
                     >
                       {prompt}
-                    </button>
+                    </Button>
                   ))}
                 </div>
                 <p className="mt-3 text-xs text-[var(--text-muted)]">
@@ -370,26 +386,27 @@ export function ChatbotSlot() {
                   Live chatbot provider mode is enabled. If the third-party widget is blocked, you can still book or contact us directly.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Link className="btn-primary px-3 py-2 text-xs" href="/book/">
-                    Book now
-                  </Link>
-                  <Link className="btn-secondary px-3 py-2 text-xs" href="/contact/">
-                    Contact clinic
-                  </Link>
+                  <Button asChild size="sm">
+                    <Link href="/book/">Book now</Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="sm">
+                    <Link href="/contact/">Contact clinic</Link>
+                  </Button>
                 </div>
               </div>
             )}
-          </div>
+          </Card>
         ) : null}
 
-        <button
+        <Button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="btn-chat inline-flex items-center gap-2 shadow-xl"
+          variant="secondary"
+          className="inline-flex items-center gap-2 shadow-xl"
         >
           <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
           {chatbotConfig.launcherLabel}
-        </button>
+        </Button>
       </div>
     </>
   );
